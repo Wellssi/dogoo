@@ -1,0 +1,5 @@
+name: dogoo
+
+packages:
+  - packages/common/**
+  - packages/flutter/**

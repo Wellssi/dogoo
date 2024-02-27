@@ -1,0 +1,5 @@
+# Dart files
+.dart_tool
+
+# Melos setting
+pubspec_overrides.yaml
