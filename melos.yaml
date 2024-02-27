@@ -1,5 +1,33 @@
 name: dogoo
+repository: https://github.com/Wellssi/dogoo
 
 packages:
-  - packages/common/**
-  - packages/flutter/**
+  - packages/*
+  - packages/*/*
+  - packages/*/*/*
+
+ide:
+  # IDE로 Intellij를 사용하고 있지 않음.
+  # https://melos.invertase.dev/ide-support
+  intellij:
+    enabled: false
+
+# https://melos.invertase.dev/configuration/scripts
+scripts:
+  lint:all:
+    run: |
+      flutter pub run melos run lint:analyze && \
+      flutter pub run melos run lint:format
+    description: Run all static analysis checks.
+  lint:analyze:
+    run: |
+      flutter pub run melos exec -- \
+      flutter analyze . --fatal-infos
+    description: |
+      Run `flutter analyze` for all packages.
+  lint:format:
+    run: |
+      flutter pub run melos exec -- \
+      dart format . --output=none --set-exit-if-changed
+    description: |
+      Run `dart format` for all packages.
