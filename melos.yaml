@@ -31,3 +31,16 @@ scripts:
       dart format . --output=none --set-exit-if-changed
     description: |
       Run `dart format` for all packages.
+  
+  test:all:
+    run: |
+      melos run test --no-select
+  
+  test:
+    run: |
+      melos exec --fail-fast -- \
+       "flutter test"
+    description: Run `flutter test` for a specific packages.
+    packageFilters:
+      dirExists: 
+        - test
