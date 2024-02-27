@@ -3,6 +3,6 @@
 /// More dartdocs go here.
 library;
 
-export 'src/bool_dogoo_base.dart';
+export 'src/extension.dart';
 
 // TODO: Export any libraries intended for clients of this package.
