@@ -9,6 +9,8 @@ String intToStringAsDigits(int val, {int digits = 2}) {
 
   if (absStrInt.length < digits) {
     result = '${'0' * (digits - absStrInt.length)}$absStrInt';
+  } else {
+    result = absStrInt;
   }
 
   return val.isNegative ? '-$result' : result;
