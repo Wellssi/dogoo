@@ -1,4 +1,4 @@
-import 'package:map_dogoo/src/map/functions/functions.dart';
+import 'package:map_dogoo/src/functions/functions.dart';
 
 extension MapDogooExtension on Map {
   /// [mapSetIfPresent] 함수를 이용해 값을 추가.
