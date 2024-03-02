@@ -10,4 +10,9 @@ extension MapDogooExtension on Map {
   getIfPresent(dynamic key, {dynamic defaultValue}) {
     return mapGetIfPresent(this, key, defaultValue: defaultValue);
   }
+
+  /// [mapToPrettyJsonString] 함수를 이용해 보기 좋은 JSON String 반환.
+  toPrettyJsonString({int? indentSize}) {
+    return indentSize == null ? mapToPrettyJsonString(this) : mapToPrettyJsonString(this, indentSize: indentSize);
+  }
 }

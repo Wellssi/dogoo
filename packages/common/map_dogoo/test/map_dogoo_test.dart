@@ -28,6 +28,15 @@ void main() {
       expect(mapGetIfPresent(myMap, 'key2'), null);
       expect(mapGetIfPresent(myMap, 'key2', defaultValue: 2), 2);
     });
+
+    test('👉 전달하는 Map에 대해 보기 좋은 JSON String으로 반환', () {
+      Map<String, dynamic> myMap = {
+        'key1': 1,
+        'key2': 2,
+      };
+      expect(mapToPrettyJsonString(myMap), '{\n  "key1": 1,\n  "key2": 2\n}');
+      expect(mapToPrettyJsonString(myMap, indentSize: 4), '{\n    "key1": 1,\n    "key2": 2\n}');
+    });
   });
 
   group('📌 MapDogoo - Extension Test', () {
@@ -55,6 +64,15 @@ void main() {
       expect(myMap.getIfPresent('key1'), 1);
       expect(myMap.getIfPresent('key2'), null);
       expect(myMap.getIfPresent('key2', defaultValue: 2), 2);
+    });
+
+    test('👉 전달하는 Map에 대해 보기 좋은 JSON String으로 반환', () {
+      Map<String, dynamic> myMap = {
+        'key1': 1,
+        'key2': 2,
+      };
+      expect(myMap.toPrettyJsonString(), '{\n  "key1": 1,\n  "key2": 2\n}');
+      expect(myMap.toPrettyJsonString(indentSize: 4), '{\n    "key1": 1,\n    "key2": 2\n}');
     });
   });
 }
