@@ -13,7 +13,7 @@ Map mapSetIfPresent<KeyType, ValueType>({
   ValueType? defaultValue,
 }) {
   if (key != null && (value != null || defaultValue != null)) {
-    map.addAll({key: value ?? defaultValue!});
+    map[key] = value ?? defaultValue!;
   }
   return map;
 }
