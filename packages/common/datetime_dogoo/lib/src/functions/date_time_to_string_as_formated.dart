@@ -1,19 +1,23 @@
-import 'package:datetime_dogoo/src/enums.dart';
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:num_dogoo/num_dogoo.dart';
 
+import '../enums.dart';
+
+/// [DateTime]을 형식 문자열로 만들어 반환
 String dateTimeToStringAsFormated(
   DateTime time, {
   DateTimeStringFormat format = DateTimeStringFormat.YYYYMMDD_hhmmss,
   String dateSeparator = '/',
   String timeSeparator = ':',
 }) {
-  String year = time.year.toString();
-  String month = time.month.toStringAsDigits();
-  String day = time.day.toStringAsDigits();
+  final String year = time.year.toString();
+  final String month = time.month.toStringAsDigits();
+  final String day = time.day.toStringAsDigits();
 
-  String hour = time.hour.toStringAsDigits();
-  String minute = time.minute.toStringAsDigits();
-  String second = time.second.toStringAsDigits();
+  final String hour = time.hour.toStringAsDigits();
+  final String minute = time.minute.toStringAsDigits();
+  final String second = time.second.toStringAsDigits();
 
   switch (format) {
     case DateTimeStringFormat.YYYY:

@@ -1,9 +1,11 @@
+// ignore_for_file: avoid_print
+
 import 'package:bool_dogoo/bool_dogoo.dart';
 
 void main() {
-  bool myBoolT = true;
-  bool myBoolF = false;
+  const bool myBoolT = true;
+  const bool myBoolF = false;
 
-  print(myBoolT.toInt());
-  print(myBoolF.toDouble());
+  print(myBoolT.toInt()); // 1
+  print(myBoolF.toDouble()); // 0.0
 }

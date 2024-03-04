@@ -1,2 +1,2 @@
-export  'functions/functions.dart';
 export 'extension.dart';
+export 'functions/functions.dart';

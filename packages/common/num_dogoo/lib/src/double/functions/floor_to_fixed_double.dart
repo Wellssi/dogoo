@@ -6,14 +6,14 @@
 ///   double fixedMyPI2 = floorToFixedDouble(value: myPI, digits: 2); // 3.14
 /// ```
 double floorToFixedDouble({required double value, required int digits}) {
-  String strDouble = value.toString();
-  List<String> strList = strDouble.split('.');
+  final String strDouble = value.toString();
+  final List<String> strList = strDouble.split('.');
 
   if (strList.length < 2) return value;
 
-  String integerPart = strList[0];
+  final String integerPart = strList[0];
   String pointPart = strList[1];
   if (pointPart.length > digits) pointPart = pointPart.substring(0, digits);
 
-  return double.parse('${integerPart}.${pointPart}');
+  return double.parse('$integerPart.$pointPart');
 }

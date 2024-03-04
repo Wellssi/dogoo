@@ -4,8 +4,8 @@
 /// - 음수는 '-' 를 제외하고 자리수를 계산한다.
 String intToStringAsDigits(int val, {int digits = 2}) {
   String result = '';
-  int absInt = val.abs();
-  String absStrInt = absInt.toString();
+  final int absInt = val.abs();
+  final String absStrInt = absInt.toString();
 
   if (absStrInt.length < digits) {
     result = '${'0' * (digits - absStrInt.length)}$absStrInt';

@@ -10,7 +10,7 @@
 /// - key: [KeyType]의 Map에서 찾고자하는 key
 ///
 ReturnType? mapGetIfPresent<KeyType, ReturnType>(
-  Map<KeyType, dynamic> map,
+  Map<KeyType, ReturnType> map,
   KeyType key, {
   ReturnType? defaultValue,
 }) {

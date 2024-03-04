@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs, constant_identifier_names
+
 /// 날짜 & 시간 문자열 변환 형식 Enum
 enum DateTimeStringFormat {
   YYYY, // Year

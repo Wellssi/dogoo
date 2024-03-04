@@ -6,7 +6,7 @@
 /// - value를 제공하는 경우, map에 key-value 쌍을 추가
 /// - value가 Null 이고, defaultValue가 제공된 경우 key-defaultValue 쌍을 추가
 /// - value와 defaultValue가 모두 제공되지 않은 경우, 기존 map 반환
-Map mapSetIfPresent<KeyType, ValueType>({
+Map<KeyType, ValueType> mapSetIfPresent<KeyType, ValueType>({
   required Map<KeyType, ValueType> map,
   required KeyType key,
   ValueType? value,

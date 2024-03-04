@@ -1,5 +1,8 @@
-import 'package:bool_dogoo/src/bool_to_num.dart';
+import 'bool_to_num.dart';
 
+/// Bool Extension
+///
+/// [bool] 값을 [num], [int], [double] 타입 값으로 변경하는 확장
 extension BoolDogooExtension on bool {
   /// boolean 값을 0.0 또는 1.0로 반환합니다.
   num toNum() {

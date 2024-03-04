@@ -1,7 +1,9 @@
+// ignore_for_file: avoid_print, lines_longer_than_80_chars
+
 import 'package:datetime_dogoo/datetime_dogoo.dart';
 
 void main() {
-  final today = DateTime.now();
+  final DateTime today = DateTime.now();
 
   print(today.toStringAsFormated(format: DateTimeStringFormat.YYYYMMDD)); // 2024/02/29
   print(today.toStringAsFormated(format: DateTimeStringFormat.YYYYMMDD_hhmmss)); // 2024/02/29 15:53:18
