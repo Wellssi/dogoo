@@ -40,6 +40,13 @@ scripts:
     description: |
       Run `dart format` for all packages.
 
+  fix:all:
+    run: |
+      flutter pub run melos exec -- \
+      dart fix . --apply
+    description: |
+      Run `dart fix --apply` for all packages.
+
   test:all:
     run: |
       melos run test --no-select
