@@ -7,13 +7,8 @@ void main() {
     'key1': 1,
   };
   mapSetIfPresent(map: myMap, key: 'key2'); // myMap : { "key1": 1}
-  mapSetIfPresent(
-      map: myMap, key: 'key2', value: 2); // myMap : { "key1": 1, "key2": 2}
-  mapSetIfPresent(
-      map: myMap,
-      key: 'key3',
-      value: null,
-      defaultValue: 3); // myMap : { "key1": 1, "key2": 2, "key3": 3}
+  mapSetIfPresent(map: myMap, key: 'key2', value: 2); // myMap : { "key1": 1, "key2": 2}
+  mapSetIfPresent(map: myMap, key: 'key3', value: null, defaultValue: 3); // myMap : { "key1": 1, "key2": 2, "key3": 3}
 
   mapGetIfPresent(myMap, 'key1'); // 1
   mapGetIfPresent(myMap, 'key2'); // 2
@@ -25,9 +20,7 @@ void main() {
 
   myMap.setIfPresent('key2'); // myMap : { "key1": 1}
   myMap.setIfPresent('key2', value: 2); // myMap : { "key1": 1, "key2": 2}
-  myMap.setIfPresent('key3',
-      value: null,
-      defaultValue: 3); // myMap : { "key1": 1, "key2": 2, "key3": 3}
+  myMap.setIfPresent('key3', value: null, defaultValue: 3); // myMap : { "key1": 1, "key2": 2, "key3": 3}
 
   myMap.getIfPresent('key1'); // 1
   myMap.getIfPresent('key2'); // 2
