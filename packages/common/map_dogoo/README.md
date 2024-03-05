@@ -1,39 +1,40 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Utility functions and extension for [Map](https://api.flutter.dev/flutter/dart-core/Map-class.html).
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- Set value with default value.
+- Get value with default value.
+- Make pretty json string.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:map_dogoo/map_dogoo.dart';
+
+void main() {
+  Map<String, dynamic> myMap = {
+    'key1': 1,
+  };
+  mapSetIfPresent(map: myMap, key: 'key2'); // myMap : { "key1": 1}
+  mapSetIfPresent(map: myMap, key: 'key2', value: 2); // myMap : { "key1": 1, "key2": 2}
+  mapSetIfPresent(map: myMap, key: 'key3', value: null, defaultValue: 3); // myMap : { "key1": 1, "key2": 2, "key3": 3}
+
+  mapGetIfPresent(myMap, 'key1'); // 1
+  mapGetIfPresent(myMap, 'key2'); // 2
+  mapGetIfPresent(myMap, 'key5', defaultValue: 5); // 5
+
+  mapToPrettyJsonString(myMap); // {\n  "key1": 1,\n  "key2": 2,\n  "key3": 3}
+
+  myMap = {'key1': 1};
+
+  myMap.setIfPresent('key2'); // myMap : { "key1": 1}
+  myMap.setIfPresent('key2', value: 2); // myMap : { "key1": 1, "key2": 2}
+  myMap.setIfPresent('key3', value: null, defaultValue: 3); // myMap : { "key1": 1, "key2": 2, "key3": 3}
+
+  myMap.getIfPresent('key1'); // 1
+  myMap.getIfPresent('key2'); // 2
+  myMap.getIfPresent('key5', defaultValue: 5); // 5
+
+  myMap.toPrettyJsonString(); // {\n  "key1": 1,\n  "key2": 2,\n  "key3": 3}
+}
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
