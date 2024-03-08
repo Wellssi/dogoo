@@ -12,6 +12,14 @@ ide:
   intellij:
     enabled: false
 
+command:
+  version:
+    # 패키지의 ChnageLog에 commit link 생성.
+    # Conventional Commit 참고. https://www.conventionalcommits.org/ko/v1.0.0/
+    linkToCommits: true
+    # Workspace의 root에 ChangeLog 생성 및 업데이트 허용.
+    workspaceChangelog: true
+
 # https://melos.invertase.dev/configuration/scripts
 scripts:
   lint:all:
@@ -31,16 +39,23 @@ scripts:
       dart format . --output=none --set-exit-if-changed
     description: |
       Run `dart format` for all packages.
-  
+
+  fix:all:
+    run: |
+      flutter pub run melos exec -- \
+      dart fix . --apply
+    description: |
+      Run `dart fix --apply` for all packages.
+
   test:all:
     run: |
       melos run test --no-select
-  
+
   test:
     run: |
       melos exec --fail-fast -- \
        "flutter test"
     description: Run `flutter test` for a specific packages.
     packageFilters:
-      dirExists: 
+      dirExists:
         - test
