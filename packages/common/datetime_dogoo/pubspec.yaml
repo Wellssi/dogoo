@@ -1,7 +1,6 @@
 name: datetime_dogoo
 description: Provides simple functions and extensions for DateTime type. This is part of the 'dogoo' package that provides 'Dart' and 'Flutter' utilities.
 version: 0.1.0
-publish_to: none # TODO: 배포 준비 완료 시 삭제
 repository: https://github.com/Wellssi/dogoo/tree/develop/packages/common/datetime_dogoo
 
 environment:
@@ -10,8 +9,7 @@ environment:
 # Add regular dependencies here.
 dependencies:
   # path: ^1.8.0
-  num_dogoo: # TODO: num_dogoo 선 배포 후 참조 변경
-    path: ../num_dogoo
+  num_dogoo: ^0.1.0
 
 dev_dependencies:
   lints: ^3.0.0
