@@ -1,5 +1,5 @@
 name: bool_dogoo
-description: Simple functions and extension for boolean type.
+description: Provides simple functions and extensions for bool type. This is part of the 'dogoo' package that provides 'Dart' and 'Flutter' utilities.
 version: 0.1.0
 repository: https://github.com/Wellssi/dogoo/tree/develop/packages/common/bool_dogoo
 
