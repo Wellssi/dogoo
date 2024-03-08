@@ -1,4 +1,6 @@
-Utility functions and extension for [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html).
+This package is one of packages named [dogoo](https://github.com/Wellssi/dogoo) which is set of `Dart` & `Flutter` utility package set.
+
+Bool Dogoo is the package of utility functions and extension for [bool](https://api.flutter.dev/flutter/dart-core/bool-class.html) type.
 
 ## Features
 

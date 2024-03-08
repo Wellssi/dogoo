@@ -1,4 +1,6 @@
-Utility functions and extension for [num](https://api.flutter.dev/flutter/dart-core/num-class.html).
+This package is one of packages named [dogoo](https://github.com/Wellssi/dogoo) which is set of `Dart` & `Flutter` utility package set.
+
+Num Dogoo is the package of Utility functions and extension for [num](https://api.flutter.dev/flutter/dart-core/num-class.html).
 
 ## Features
 
