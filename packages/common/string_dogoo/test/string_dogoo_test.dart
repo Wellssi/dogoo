@@ -1,4 +1,4 @@
-import 'package:string_dogoo/src/const.dart';
+import 'package:string_dogoo/src/const/const.dart';
 import 'package:string_dogoo/string_dogoo.dart';
 import 'package:test/test.dart';
 
