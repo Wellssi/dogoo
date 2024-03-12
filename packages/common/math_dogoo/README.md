@@ -1,39 +1,70 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+This is part of the [dogoo](https://github.com/Wellssi/dogoo) package that provides `Dart` and `Flutter` utilities.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Math Dogoo provides extra math functions and extensions.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- 10 base logarithm function & extension.
+- n square root function & extension.
+- dynamic round function & extension.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'dart:math' as math;
+
+import 'package:math_dogoo/math_dogoo.dart' as math_dogoo;
+
+void main() {
+  const double pi = math.pi;
+
+  print(math_dogoo.absolute(2)); // 2.0
+  print(math_dogoo.absolute(-2)); // 2.0
+
+  print(math_dogoo.log10(2)); // 0.30102999566398114
+  print(math_dogoo.log10(10)); // 1.0
+  print(math_dogoo.log10(100)); // 2.0
+
+  print(math_dogoo.roundAt(pi)); // 3.14159265358979
+  print(math_dogoo.roundAt(pi, fractionDigits: 2)); // 3.14
+
+  print(math_dogoo.root(2, 2)); // 1.414213562373095
+  print(math_dogoo.root(-2, 2)); // NaN
+  print(math_dogoo.root(2, 3)); // 1.259921049894873
+  print(math_dogoo.root(-2, 3)); // -1.259921049894873
+  print(math_dogoo.root(3, 2)); // 1.732050807568877
+  print(math_dogoo.root(3, 3)); // 1.442249570307408
+  print(math_dogoo.root(10000, 2)); // 100.0
+  print(math_dogoo.root(1000, 3)); // 10.0
+  print(math_dogoo.root(1024, 10)); // 2.0
+
+  print(math_dogoo.root(3, 2.1)); // 1.687332211990613
+  print(math_dogoo.root(-3, 2.1)); // NaN
+
+  // * -------------------- *
+
+  print(2.absolute()); // 2.0
+  print((-2).absolute()); // 2.0
+
+  print(2.log10()); // 0.30102999566398114
+  print(10.log10()); // 1.0
+  print(100.log10()); // 2.0
+
+  print(pi.roundAt()); // 3.14159265358979
+  print(pi.roundAt(fractionDigits: 2)); // 3.14
+
+  print(2.root(2)); // 1.414213562373095
+  print((-2).root(2)); // NaN
+  print(2.root(3)); // 1.259921049894873
+  print(-2.root(3)); // -1.259921049894873
+  print(3.root(2)); // 1.732050807568877
+  print(3.root(3)); // 1.442249570307408
+  print(10000.root(2)); // 100.0
+  print(1000.root(3)); // 10.0
+  print(1024.root(10)); // 2.0
+
+  print(3.root(2.1)); // 1.687332211990613
+  print((-3).root(2.1)); // NaN
+}
+
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
