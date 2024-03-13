@@ -17,4 +17,7 @@ void main() {
   print("a".toBool()); // null
   print("b".toBool()); // null
   print("".toBool()); // null
+
+  print("apple".startsWithUpperCase()); // Apple
+  print("banana".startsWithUpperCase()); // Banana
 }
