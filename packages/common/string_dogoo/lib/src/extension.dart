@@ -10,8 +10,8 @@ extension StringDogooExtension on String {
   }
 
   /// Returns the foramtted [String] value like `Xxxx...` .
-  /// Extension of [stringStartsWithUpperCase] function.
-  String startsWithUpperCase() {
-    return stringStartsWithUpperCase(this);
+  /// Extension of [stringToTitleCase] function.
+  String toTitleCase() {
+    return stringToTitleCase(this);
   }
 }
