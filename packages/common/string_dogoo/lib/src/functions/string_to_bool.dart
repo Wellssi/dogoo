@@ -1,6 +1,8 @@
 import 'package:string_dogoo/src/const/const.dart';
 
-/// String 값을 boolean으로 변환해 반환하는 함수.
+/// Returns the nullable boolean value.
+/// If the value is one of boolean string([trueString], [falseString]), then return boolean value.
+/// If the value is not one of boolean string([trueString], [falseString]), then return null.
 bool? stringToBool(String str) {
   String newStr = str.toLowerCase();
 
