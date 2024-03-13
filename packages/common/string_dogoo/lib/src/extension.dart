@@ -5,4 +5,10 @@ extension StringDogooExtension on String {
   bool? toBool() {
     return stringToBool(this);
   }
+
+  /// Returns the foramtted [String] value like `Xxxx...` .
+  /// Extension of [stringStartsWithUpperCase] function.
+  String startsWithUpperCase() {
+    return stringStartsWithUpperCase(this);
+  }
 }
