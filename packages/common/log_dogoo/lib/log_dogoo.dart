@@ -1,1 +1,1 @@
-export 'src/const/const.dart';
+export 'src/configs/configs.dart';
