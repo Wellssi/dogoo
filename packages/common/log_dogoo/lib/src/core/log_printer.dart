@@ -1,5 +1,5 @@
 abstract class LogPrinter {
   Future<dynamic> init();
 
-  String printout();
+  Future<dynamic> printout(StringBuffer buffer);
 }

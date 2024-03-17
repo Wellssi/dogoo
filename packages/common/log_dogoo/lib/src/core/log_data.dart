@@ -1,5 +1,10 @@
+import 'log_level.dart';
+
 /// Log data
 class LogData {
+  /// Log Level
+  LogLevel level;
+
   /// Log message.
   dynamic message;
 
@@ -11,6 +16,7 @@ class LogData {
   StackTrace? stackTrace;
 
   LogData(
+    this.level,
     this.message, {
     DateTime? time,
     this.error,
