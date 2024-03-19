@@ -1,3 +1,5 @@
+import '../consts/colors/colors.dart';
+
 /// LogLevel.
 /// You can implement your own log level for filtering.
 class LogLevel {
@@ -8,21 +10,27 @@ class LogLevel {
   /// This will be used for filtering the log.
   late int _value;
 
+  /// Log message color
+  late AnsiFontColor _color;
+
   /// Log level
   late String _symbol;
 
   LogLevel({
     required String name,
     required int value,
+    AnsiFontColor color = AnsiFontColor.none,
     String symbol = '',
   }) {
     _name = name;
     _value = value;
+    _color = color;
     _symbol = symbol;
   }
 
   String get name => _name;
   int get value => _value;
+  AnsiFontColor get color => _color;
   String get symbol => _symbol;
 
   /// Returns [LogLevel] info [String].
