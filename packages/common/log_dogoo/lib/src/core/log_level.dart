@@ -51,12 +51,19 @@ class LogLevel {
     );
   }
 
-  ///
   bool operator >(covariant LogLevel ol) {
     return _value > ol.value;
   }
 
+  bool operator >=(covariant LogLevel ol) {
+    return _value >= ol.value;
+  }
+
   bool operator <(covariant LogLevel ol) {
+    return _value < ol.value;
+  }
+
+  bool operator <=(covariant LogLevel ol) {
     return _value < ol.value;
   }
 }
