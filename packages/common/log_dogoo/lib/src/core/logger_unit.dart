@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'log_data.dart';
 import 'log_filter.dart';
 import 'log_formatter.dart';
@@ -17,6 +19,9 @@ class LoggerUnit {
   /// Logger unit's printer which implements [LogPrinter].
   final LogPrinter _printer;
 
+  /// Future of [LogFilter], [LogFormatter], [LogPrinter] init function.
+  late Future<void> _init;
+
   LoggerUnit({
     required LogLevel level,
     required LogFilter filter,
@@ -25,8 +30,20 @@ class LoggerUnit {
   })  : _level = level,
         _filter = filter,
         _formatter = formatter,
-        _printer = printer;
+        _printer = printer {
+    unawaited(() {
+      _init = Future.wait(<Future<void>>[
+        _filter.init(),
+        _formatter.init(),
+        _printer.init(),
+      ]);
+    }());
+  }
 
+  /// get [_init].
+  Future<void> get init => _init;
+
+  /// Prints the message with some  .
   Future<void> log(
     dynamic message, {
     DateTime? time,
