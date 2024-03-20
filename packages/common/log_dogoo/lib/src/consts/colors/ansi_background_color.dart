@@ -1,3 +1,5 @@
+import 'ansi_color.dart';
+
 enum AnsiBackgroundColor {
   // Normal Color
   black('40m'),
@@ -27,4 +29,10 @@ enum AnsiBackgroundColor {
   final String value;
 
   const AnsiBackgroundColor(this.value);
+}
+
+extension AnsiBackgroundColorExtension on AnsiBackgroundColor {
+  String toColorString() {
+    return ansiColorPrefix + value;
+  }
 }

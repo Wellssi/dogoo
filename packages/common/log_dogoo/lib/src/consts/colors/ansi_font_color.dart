@@ -1,3 +1,5 @@
+import 'ansi_color.dart';
+
 enum AnsiFontColor {
   // Normal Color
   black('30m'),
@@ -27,4 +29,10 @@ enum AnsiFontColor {
   final String value;
 
   const AnsiFontColor(this.value);
+}
+
+extension AnsiFontColorExtension on AnsiFontColor {
+  String toColorString() {
+    return ansiColorPrefix + value;
+  }
 }
