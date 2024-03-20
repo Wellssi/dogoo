@@ -60,7 +60,7 @@ class LoggerUnit {
 
     final bool isValid = _filter.isValid(logData);
     if (isValid) {
-      final StringBuffer buffer = _formatter.formatMessage(logData);
+      final StringBuffer buffer = _formatter.format(logData);
       await _printer.printout(buffer);
     }
   }
