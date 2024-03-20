@@ -4,66 +4,58 @@ import '../consts/colors/colors.dart';
 /// You can implement your own log level for filtering.
 class LogLevel {
   /// Logging level name.
-  late String _name;
+  final String name;
 
   /// Logging level value.
   /// This will be used for filtering the log.
-  late int _value;
+  final int value;
 
   /// Log message color
-  late AnsiFontColor _color;
+  final AnsiFontColor fontColor;
+
+  final AnsiBackgroundColor backgroundColor;
 
   /// Log level
-  late String _symbol;
+  final String symbol;
 
   LogLevel({
-    required String name,
-    required int value,
-    AnsiFontColor color = AnsiFontColor.none,
-    String symbol = '',
-  }) {
-    _name = name;
-    _value = value;
-    _color = color;
-    _symbol = symbol;
-  }
+    required this.name,
+    required this.value,
+    this.fontColor = AnsiFontColor.none,
+    this.backgroundColor = AnsiBackgroundColor.none,
+    this.symbol = '',
+  });
 
-  String get name => _name;
-  int get value => _value;
-  AnsiFontColor get color => _color;
-  String get symbol => _symbol;
-
-  /// Returns [LogLevel] info [String].
-  String header({bool useLevel = false}) {
-    return '$_symbol${useLevel ? " | $_name" : ""}';
-  }
-
-  /// Generates the copy object of [LogLevel].
+  /// Generates the copied object of [LogLevel].
   LogLevel copyWith({
     String? name,
-    int? level,
+    int? value,
+    AnsiFontColor? fontColor,
+    AnsiBackgroundColor? backgroundColor,
     String? symbol,
   }) {
     return LogLevel(
-      name: name ?? _name,
-      value: level ?? _value,
-      symbol: symbol ?? _symbol,
+      name: name ?? this.name,
+      value: value ?? this.value,
+      fontColor: fontColor ?? this.fontColor,
+      backgroundColor: backgroundColor ?? this.backgroundColor,
+      symbol: symbol ?? this.symbol,
     );
   }
 
   bool operator >(covariant LogLevel ol) {
-    return _value > ol.value;
+    return value > ol.value;
   }
 
   bool operator >=(covariant LogLevel ol) {
-    return _value >= ol.value;
+    return value >= ol.value;
   }
 
   bool operator <(covariant LogLevel ol) {
-    return _value < ol.value;
+    return value < ol.value;
   }
 
   bool operator <=(covariant LogLevel ol) {
-    return _value < ol.value;
+    return value < ol.value;
   }
 }
