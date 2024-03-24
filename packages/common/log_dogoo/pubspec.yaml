@@ -6,13 +6,11 @@ repository: https://github.com/Wellssi/dogoo/tree/develop/packages/common/log_do
 environment:
   sdk: ^3.3.1
 
-# Add regular dependencies here.
-# dependencies:
-#   # path: ^1.8.0
 dependencies:
   # path: ^1.8.0
   datetime_dogoo: ^0.1.0
   map_dogoo: ^0.1.0
+  num_dogoo: ^0.1.0
 
 dev_dependencies:
   lints: ^3.0.0

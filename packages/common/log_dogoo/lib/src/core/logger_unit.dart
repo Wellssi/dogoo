@@ -4,6 +4,7 @@ import 'log_data.dart';
 import 'log_filter.dart';
 import 'log_formatter.dart';
 import 'log_level.dart';
+import 'log_print_data.dart';
 import 'log_printer.dart';
 
 class LoggerUnit {
@@ -22,11 +23,15 @@ class LoggerUnit {
   /// Future of [LogFilter], [LogFormatter], [LogPrinter] init function.
   late Future<void> _init;
 
+  /// The callback function that runs after the output.
+  dynamic Function(LogPrintData printData)? printCallback;
+
   LoggerUnit({
     required LogLevel level,
     required LogFilter filter,
     required LogFormatter formatter,
     required LogPrinter printer,
+    this.printCallback,
   })  : _level = level,
         _filter = filter,
         _formatter = formatter,
@@ -60,8 +65,10 @@ class LoggerUnit {
 
     final bool isValid = _filter.isValid(logData);
     if (isValid) {
-      final StringBuffer buffer = _formatter.format(logData);
-      await _printer.printout(buffer);
+      final LogPrintData printData = _formatter.format(logData);
+      await _printer.printout(printData).then((value) {
+        printCallback?.call(value);
+      });
     }
   }
 }

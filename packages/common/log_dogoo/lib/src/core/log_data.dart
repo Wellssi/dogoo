@@ -6,6 +6,7 @@ class LogData {
   LogLevel level;
 
   /// Log message.
+  // TODO(kangmin): LogMessage 클래스 생성해서 message의 header와 body, tail 만들기
   dynamic message;
 
   /// The creation time of [LogData].

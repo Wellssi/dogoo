@@ -2,9 +2,13 @@ import 'core/core.dart';
 import 'levels/levels.dart';
 
 class Logger {
-  Logger();
+  final LogLevel leastLevel;
 
-  void _log(LogLevel logConfig, LogData logData) {}
+  Logger({
+    LogLevel? leastLevel,
+  }) : leastLevel = leastLevel ?? traceLevel;
+
+  void log(LogData logData) {}
 
   /// Log of [traceLevel]
   void t(
@@ -12,7 +16,15 @@ class Logger {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
-  }) {}
+  }) {
+    final LogData logData = LogData(
+      traceLevel,
+      message,
+      time: time,
+      error: error,
+      stackTrace: stackTrace,
+    );
+  }
 
   /// Log of [debugLevel]
   void d(
@@ -20,7 +32,15 @@ class Logger {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
-  }) {}
+  }) {
+    final LogData logData = LogData(
+      debugLevel,
+      message,
+      time: time,
+      error: error,
+      stackTrace: stackTrace,
+    );
+  }
 
   /// Log of [infoLevel]
   void i(
@@ -28,7 +48,15 @@ class Logger {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
-  }) {}
+  }) {
+    final LogData logData = LogData(
+      infoLevel,
+      message,
+      time: time,
+      error: error,
+      stackTrace: stackTrace,
+    );
+  }
 
   /// Log of [warningLevel]
   void w(
@@ -36,7 +64,15 @@ class Logger {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
-  }) {}
+  }) {
+    final LogData logData = LogData(
+      warningLevel,
+      message,
+      time: time,
+      error: error,
+      stackTrace: stackTrace,
+    );
+  }
 
   /// Log of [errorLevel]
   void e(
@@ -44,7 +80,15 @@ class Logger {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
-  }) {}
+  }) {
+    final LogData logData = LogData(
+      errorLevel,
+      message,
+      time: time,
+      error: error,
+      stackTrace: stackTrace,
+    );
+  }
 
   /// Log of [fatalLevel]
   void f(
@@ -52,5 +96,13 @@ class Logger {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
-  }) {}
+  }) {
+    final LogData logData = LogData(
+      fatalLevel,
+      message,
+      time: time,
+      error: error,
+      stackTrace: stackTrace,
+    );
+  }
 }
