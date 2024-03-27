@@ -1,4 +1,10 @@
 export 'absolute.dart';
+export 'factorial.dart';
+export 'hyperbolic_cosine.dart';
+export 'hyperbolic_sine.dart';
+export 'hyperbolic_tangent.dart';
+export 'log_2.dart';
 export 'log_10.dart';
+export 'log.dart';
 export 'root.dart';
 export 'round_at.dart';
