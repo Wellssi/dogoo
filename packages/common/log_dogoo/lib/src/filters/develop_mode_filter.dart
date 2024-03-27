@@ -2,7 +2,7 @@ import '../core/core.dart';
 
 /// Prints all logs while in development mode.
 /// In release mode ALL logs are omitted.
-class OnlyDevelopModeFilter implements LogFilter {
+class DevelopModeFilter implements LogFilter {
   @override
   Future<void> init() async {}
 
