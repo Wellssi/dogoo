@@ -10,3 +10,8 @@ Log Dogoo provides utility log functions.
 
 ```dart
 ```
+
+## ToDo
+
+- [ ] File Output
+- [ ] Daily Rotate Filte(Like [winston-daily-rotate-file](https://www.npmjs.com/package/winston-daily-rotate-file))
