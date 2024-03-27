@@ -9,7 +9,7 @@ extension MathDogooExtension on num {
 
   /// Extension of [math_dogoo.factorial].
   /// Converts to an [int] and returns factorial value.
-  int factorial() {
+  double factorial() {
     return math_dogoo.factorial(toInt());
   }
 
@@ -22,19 +22,19 @@ extension MathDogooExtension on num {
   /// Extension of [math_dogoo.hyperbolicCosine(x)].
   /// Converts to a [double] and returns hyperbolic cosine value.
   double hyperbolicCosine() {
-    return math_dogoo.hyperbolicCosine(this);
+    return math_dogoo.cosh(this);
   }
 
   /// Extension of [math_dogoo.hyperbolicSine(x)].
   /// Converts to a [double] and returns hyperbolic sine value.
   double hyperbolicSine() {
-    return math_dogoo.hyperbolicSine(this);
+    return math_dogoo.sinh(this);
   }
 
   /// Extension of [math_dogoo.hyperbolicTangent(x)].
   /// Converts to a [double] and returns hyperbolic tangent value.
   double hyperbolicTangent() {
-    return math_dogoo.hyperbolicTangent(this);
+    return math_dogoo.tanh(this);
   }
 
   /// Extension of [math_dogoo.log2].
@@ -52,7 +52,7 @@ extension MathDogooExtension on num {
   /// Extension of [math_dogoo.log10].
   /// Converts to a [double] and returns [base]-base logarithm value.
   double log(num base) {
-    return math_dogoo.log(this, base);
+    return math_dogoo.logN(this, base);
   }
 
   /// Extension of [math_dogoo.root].

@@ -1,5 +1,5 @@
 /// Returns the factorial of [x]. (0 <= x <= 10)
-List<int> _factorialList = [
+List<double> _factorialList = [
   1, // 0!
   1, // 1!
   2, // 2!
@@ -13,9 +13,11 @@ List<int> _factorialList = [
   3628800 // 10!
 ];
 
-int factorial(int x) {
+/// Returns the factorial of [x].
+/// If [x] is less than 0, returns NaN.
+double factorial(int x) {
   if (x < 0) {
-    throw ArgumentError('Factorial of negative number is not defined.');
+    return double.nan;
   }
 
   if (x <= 10) {
