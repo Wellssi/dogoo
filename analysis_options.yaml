@@ -57,6 +57,3 @@ linter:
     sort_constructors_first: false
     unnecessary_final: false
     use_decorated_box: false
-
-    # Class 생성자 및 enum에서 직관적인 값들에도 Documentation 하도록 유도하는 등 너무 잦은 문제 생성.
-    public_member_api_docs: false
