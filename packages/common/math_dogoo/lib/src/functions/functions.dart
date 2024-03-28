@@ -1,4 +1,14 @@
 export 'absolute.dart';
+export 'acosh.dart';
+export 'asinh.dart';
+export 'atanh.dart';
+export 'cosh.dart';
+export 'ee.dart';
+export 'factorial.dart';
+export 'log_2.dart';
 export 'log_10.dart';
+export 'log_n.dart';
 export 'root.dart';
 export 'round_at.dart';
+export 'sinh.dart';
+export 'tanh.dart';
