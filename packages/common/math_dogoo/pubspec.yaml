@@ -1,6 +1,6 @@
 name: math_dogoo
 description: Provides extra math functions and extensions. This is part of the 'dogoo' package that provides 'Dart' and 'Flutter' utilities.
-version: 0.1.0
+version: 0.2.0
 repository: https://github.com/Wellssi/dogoo/tree/develop/packages/common/math_dogoo
 
 environment:
