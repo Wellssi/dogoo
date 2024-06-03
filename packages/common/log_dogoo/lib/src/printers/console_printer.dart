@@ -1,4 +1,6 @@
-import 'package:log_dogoo/src/core/core.dart';
+// ignore_for_file: avoid_print
+
+import '../core/core.dart';
 
 class ConsolePrinter implements LogPrinter {
   @override
