@@ -156,7 +156,7 @@ class BasicFormatter implements LogFormatter {
     }
 
     return LogPrintData(
-      origin: data,
+      logData: data,
       formattedMessages: buffer,
     );
   }

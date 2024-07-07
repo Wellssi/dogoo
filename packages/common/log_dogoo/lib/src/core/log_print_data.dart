@@ -1,11 +1,11 @@
 import 'log_data.dart';
 
 class LogPrintData {
-  LogData origin;
+  LogData logData;
   List<String> formattedMessages;
 
   LogPrintData({
-    required this.origin,
+    required this.logData,
     required this.formattedMessages,
   });
 }

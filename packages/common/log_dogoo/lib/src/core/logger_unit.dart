@@ -6,6 +6,7 @@ import 'log_formatter.dart';
 import 'log_level.dart';
 import 'log_print_data.dart';
 import 'log_printer.dart';
+import 'log_result.dart';
 
 class LoggerUnit {
   /// Logger unit's level which extends [LogLevel], or instance of [LogLevel].
@@ -24,7 +25,7 @@ class LoggerUnit {
   late Future<void> _init;
 
   /// The callback function that runs after the output.
-  dynamic Function(LogPrintData printData)? printCallback;
+  dynamic Function(LogResult printData)? printCallback;
 
   LoggerUnit({
     required LogLevel level,
@@ -49,7 +50,7 @@ class LoggerUnit {
   Future<void> get init => _init;
 
   /// Prints the message with additional info.
-  Future<void> call(
+  Future<LogResult> call(
     dynamic message, {
     DateTime? time,
     Object? error,
@@ -62,13 +63,33 @@ class LoggerUnit {
       error: error,
       stackTrace: stackTrace,
     );
-
+    late LogResult logResult;
     final bool isValid = _filter(logData);
-    if (isValid) {
-      final LogPrintData printData = _formatter(logData);
-      await _printer(printData).then((LogPrintData value) {
-        printCallback?.call(value);
-      });
+
+    try {
+      if (isValid) {
+        final LogPrintData printData = _formatter(logData);
+        await _printer(printData);
+        logResult = LogResult(
+          success: true,
+          logData: logData,
+          formattedMessages: printData.formattedMessages,
+        );
+      } else {
+        logResult = LogResult(
+          success: true,
+          filtered: true,
+          logData: logData,
+        );
+      }
+    } catch (e) {
+      logResult = LogResult(
+        success: false,
+        logData: logData,
+        exception: e is Exception ? e : Exception(e.toString()),
+      );
     }
+
+    return logResult;
   }
 }
