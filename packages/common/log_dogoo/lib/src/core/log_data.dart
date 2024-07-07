@@ -10,6 +10,7 @@ class LogData {
   dynamic message;
 
   /// The creation time of [LogData].
+  /// default is [DateTime.now()]
   DateTime? time;
 
   Object? error;

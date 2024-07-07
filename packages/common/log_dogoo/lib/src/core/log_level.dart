@@ -18,7 +18,7 @@ class LogLevel {
   /// Log level
   final String symbol;
 
-  LogLevel({
+  const LogLevel({
     required this.name,
     required this.value,
     this.fontColor = AnsiFontColor.none,

@@ -48,7 +48,7 @@ class LoggerUnit {
   /// get [_init].
   Future<void> get init => _init;
 
-  /// Prints the message with some  .
+  /// Prints the message with additional info.
   Future<void> call(
     dynamic message, {
     DateTime? time,
@@ -63,10 +63,10 @@ class LoggerUnit {
       stackTrace: stackTrace,
     );
 
-    final bool isValid = _filter.call(logData);
+    final bool isValid = _filter(logData);
     if (isValid) {
-      final LogPrintData printData = _formatter.call(logData);
-      await _printer.call(printData).then((value) {
+      final LogPrintData printData = _formatter(logData);
+      await _printer(printData).then((LogPrintData value) {
         printCallback?.call(value);
       });
     }
