@@ -69,12 +69,7 @@ class LoggerUnit {
     try {
       if (isValid) {
         final LogPrintData printData = _formatter(logData);
-        await _printer(printData);
-        logResult = LogResult(
-          success: true,
-          logData: logData,
-          formattedMessages: printData.formattedMessages,
-        );
+        logResult = await _printer(printData);
       } else {
         logResult = LogResult(
           success: true,

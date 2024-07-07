@@ -1,7 +1,8 @@
 import 'log_print_data.dart';
+import 'log_result.dart';
 
 abstract class LogPrinter {
   Future<void> init();
 
-  Future<LogPrintData> call(LogPrintData logPrintData);
+  Future<LogResult> call(LogPrintData logPrintData);
 }

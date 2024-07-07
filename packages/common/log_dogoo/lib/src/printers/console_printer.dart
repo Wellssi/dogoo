@@ -7,8 +7,21 @@ class ConsolePrinter implements LogPrinter {
   Future<void> init() async {}
 
   @override
-  Future<LogPrintData> call(LogPrintData logPrintData) async {
-    logPrintData.formattedMessages.forEach(print);
-    return logPrintData;
+  Future<LogResult> call(LogPrintData logPrintData) async {
+    try {
+      logPrintData.formattedMessages.forEach(print);
+      return LogResult(
+        success: true,
+        logData: logPrintData.logData,
+        formattedMessages: logPrintData.formattedMessages,
+      );
+    } catch (e) {
+      return LogResult(
+        success: false,
+        logData: logPrintData.logData,
+        formattedMessages: logPrintData.formattedMessages,
+        exception: e is Exception ? e : Exception(e.toString()),
+      );
+    }
   }
 }
