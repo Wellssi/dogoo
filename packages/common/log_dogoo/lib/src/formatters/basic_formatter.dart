@@ -29,12 +29,16 @@ class BasicFormatter implements LogFormatter {
   /// Max count number of [StackTrace].
   final int? maxStackCount;
 
+  /// Indent size of prettyJson.
+  final int indentSize;
+
   BasicFormatter({
     this.printLevelName = false,
     this.printTime = true,
     this.stackFilter,
     this.stackStartNumber = 1,
     this.maxStackCount,
+    this.indentSize = 2,
   });
 
   @override
@@ -44,10 +48,7 @@ class BasicFormatter implements LogFormatter {
   /// then return prettyJson.
   /// If [obj]'s type is not [Map] or [Iterable],
   /// then return [obj.toString()].
-  String genPrettyJsonString(
-    dynamic obj, {
-    int indentSize = 2,
-  }) {
+  String _genPrettyJsonString(dynamic obj) {
     String result = '';
     final JsonEncoder encoder = JsonEncoder.withIndent(' ' * indentSize);
 
@@ -91,7 +92,7 @@ class BasicFormatter implements LogFormatter {
   }
 
   List<String> _formatMessage(LogData data) {
-    final List<String> buffer = [];
+    final List<String> buffer = <String>[];
 
     final dynamic message = data.message;
 
@@ -99,7 +100,7 @@ class BasicFormatter implements LogFormatter {
 
     final String header = _genHeader(data);
 
-    final List<String> finalString = genPrettyJsonString(message).split('\n');
+    final List<String> finalString = _genPrettyJsonString(message).split('\n');
     for (final String line in finalString) {
       buffer.add(_genColoredLine(data.level, '$header $line'));
     }
@@ -110,22 +111,19 @@ class BasicFormatter implements LogFormatter {
   List<String> _formatStackTrace(LogData data) {
     final List<String> buffer = <String>[];
 
-    List<String> stackTraceLines = data.stackTrace!.toString().split('\n');
-    int maxCount = maxStackCount ?? stackTraceLines.length;
+    final List<String> stackTraceLines =
+        data.stackTrace!.toString().split('\n');
+    final int maxCount = maxStackCount ?? stackTraceLines.length;
 
     for (int i = 0; i < maxCount; i++) {
-      String line = stackTraceLines[i];
+      final String line = stackTraceLines[i];
 
       if (stackFilter == null ||
           (stackFilter != null && line.contains(stackFilter!))) {
-        buffer.add(
-          _genColoredLine(
-            data.level,
-            '#${(i + stackStartNumber).toStringAsDigits()}' +
-                ' ' * 2 +
-                line.replaceFirst(stackIndexRegex, ''),
-          ),
-        );
+        String bufferLine = '#${(i + stackStartNumber).toStringAsDigits()}';
+        bufferLine += ' ' * 2;
+        bufferLine += line.replaceFirst(stackIndexRegex, '');
+        buffer.add(_genColoredLine(data.level, bufferLine));
       }
     }
 
@@ -135,7 +133,7 @@ class BasicFormatter implements LogFormatter {
   List<String> _formatError(LogData data) {
     final List<String> buffer = <String>[];
 
-    List<String> errorLines = data.error.toString().split('\n');
+    final List<String> errorLines = data.error.toString().split('\n');
     for (final String line in errorLines) {
       buffer.add(_genColoredLine(data.level, line));
     }
