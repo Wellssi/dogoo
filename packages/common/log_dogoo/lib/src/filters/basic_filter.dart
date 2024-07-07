@@ -3,6 +3,7 @@ import '../levels/levels.dart';
 import 'develop_mode_filter.dart';
 import 'level_filter.dart';
 
+/// BasicFilter is a combination of [DevelopModeFilter] and [LevelFilter].
 class BasicFilter implements LogFilter {
   late final LogLevel leastLevel;
 
