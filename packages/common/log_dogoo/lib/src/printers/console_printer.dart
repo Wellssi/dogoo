@@ -7,7 +7,7 @@ class ConsolePrinter implements LogPrinter {
   Future<void> init() async {}
 
   @override
-  Future<LogPrintData> printout(LogPrintData logPrintData) async {
+  Future<LogPrintData> call(LogPrintData logPrintData) async {
     logPrintData.formattedMessages.forEach(print);
     return logPrintData;
   }

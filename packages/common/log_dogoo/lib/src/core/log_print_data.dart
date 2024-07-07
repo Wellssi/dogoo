@@ -1,4 +1,4 @@
-import 'package:log_dogoo/src/core/log_data.dart';
+import 'log_data.dart';
 
 class LogPrintData {
   LogData origin;

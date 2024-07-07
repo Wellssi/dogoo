@@ -144,8 +144,8 @@ class BasicFormatter implements LogFormatter {
   }
 
   @override
-  LogPrintData format(LogData data) {
-    final List<String> buffer = [];
+  LogPrintData call(LogData data) {
+    final List<String> buffer = <String>[];
 
     buffer.addAll(_formatMessage(data));
 

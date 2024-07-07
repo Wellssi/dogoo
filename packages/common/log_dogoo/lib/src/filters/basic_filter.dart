@@ -19,9 +19,9 @@ class BasicFilter implements LogFilter {
   Future<void> init() async {}
 
   @override
-  bool isValid(LogData logData) {
-    final bool isDevMode = _developModeFilter.isValid(logData);
-    final bool isValidLevel = _levelFilter.isValid(logData);
+  bool call(LogData logData) {
+    final bool isDevMode = _developModeFilter(logData);
+    final bool isValidLevel = _levelFilter(logData);
     return isDevMode && isValidLevel;
   }
 }

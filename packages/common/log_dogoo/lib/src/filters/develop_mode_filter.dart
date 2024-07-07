@@ -7,7 +7,7 @@ class DevelopModeFilter implements LogFilter {
   Future<void> init() async {}
 
   @override
-  bool isValid(LogData logData) {
+  bool call(LogData logData) {
     bool validLog = false;
 
     assert(() {

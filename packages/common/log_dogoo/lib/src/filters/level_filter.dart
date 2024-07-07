@@ -10,7 +10,7 @@ class LevelFilter extends LogFilter {
   LevelFilter({required this.minLevel});
 
   @override
-  bool isValid(LogData logData) {
+  bool call(LogData logData) {
     bool validLog = false;
 
     if (logData.level >= minLevel) {
