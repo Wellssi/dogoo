@@ -1,6 +1,5 @@
-import 'parent.dart';
+part of 'parent.dart';
 
-const String _type = 'type';
 const String _databaseId = 'database_id';
 
 /// Database Parent Object

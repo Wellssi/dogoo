@@ -1,6 +1,5 @@
-import 'parents.dart';
+part of 'parent.dart';
 
-const String _type = 'type';
 const String _blockId = 'block_id';
 
 /// Block Parent Object
