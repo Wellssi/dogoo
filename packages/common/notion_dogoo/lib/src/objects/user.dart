@@ -1,5 +1,11 @@
 import 'package:notion_dogoo/src/constants/constants.dart';
 
+const String _object = 'object';
+const String _id = 'id';
+const String _type = 'type';
+const String _name = 'name';
+const String _avatarUrl = 'avatar_url';
+
 /// REF: https://developers.notion.com/reference/user#where-user-objects-appear-in-the-api
 class User {
   const User({
@@ -18,23 +24,23 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      object: json['object'],
-      id: json['id'],
-      type: json['type'] != null
-          ? UserType.values.firstWhere((e) => e.name == json['type'])
+      object: json[_object],
+      id: json[_id],
+      type: json[_type] != null
+          ? UserType.values.firstWhere((e) => e.name == json[_type])
           : null,
-      name: json['name'],
-      avatarUrl: json['avatar_url'],
+      name: json[_name],
+      avatarUrl: json[_avatarUrl],
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'object': object,
-      'id': id,
-      'type': type?.name,
-      'name': name,
-      'avatar_url': avatarUrl,
+      _object: object,
+      _id: id,
+      _type: type?.name,
+      _name: name,
+      _avatarUrl: avatarUrl,
     };
   }
 }
