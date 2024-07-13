@@ -8,6 +8,7 @@ import '../user.dart';
 part 'bookmark_block.dart';
 part 'breadcrumb_block.dart';
 part 'bulleted_list_item_block.dart';
+part 'callout_block.dart';
 
 const String _object = 'object';
 const String _id = 'id';
