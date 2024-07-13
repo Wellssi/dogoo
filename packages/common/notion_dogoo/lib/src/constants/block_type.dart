@@ -1,35 +1,67 @@
+const String _bookmark = 'bookmark';
+const String _breadcrumb = 'breadcrumb';
+const String _bulletedListItem = 'bulleted_list_item';
+const String _callout = 'callout';
+const String _childDatabase = 'child_database';
+const String _childPage = 'childPage';
+const String _column = 'column';
+const String _columnList = 'column_list';
+const String _divider = 'divider';
+const String _embed = 'embed';
+const String _equation = 'equation';
+const String _file = 'file';
+const String _heading1 = 'heading1';
+const String _heading2 = 'heading2';
+const String _heading3 = 'heading3';
+const String _image = 'image';
+const String _linkPreview = 'link_preview';
+const String _lintToPage = 'lint_to_page';
+const String _numberedListItem = 'numbered_list_item';
+const String _paragraph = 'paragraph';
+const String _pdf = 'pdf';
+const String _quote = 'quote';
+const String _syncedBlock = 'synced_block';
+const String _table = 'table';
+const String _tableOfContents = 'table_of_contents';
+const String _tableRow = 'table_row';
+const String _template = 'template';
+const String _toDo = 'to_do';
+const String _toggle = 'toggle';
+const String _unsupporteed = 'unsupporteed';
+const String _video = 'video';
+
 enum BlockType {
-  bookmark(key: 'bookmark'),
-  breadcrump(key: 'breadcrump'),
-  bulletedListItem(key: 'bulleted_list_item'),
-  callout(key: 'callout'),
-  childDatabase(key: 'child_database'),
-  childPage(key: 'childPage'),
-  column(key: 'column'),
-  columnList(key: 'column_list'),
-  divider(key: 'divider'),
-  embed(key: 'embed'),
-  equation(key: 'equation'),
-  file(key: 'file'),
-  heading1(key: 'heading1'),
-  heading2(key: 'heading2'),
-  heading3(key: 'heading3'),
-  image(key: 'image'),
-  linkPreview(key: 'link_preview'),
-  lintToPage(key: 'lint_to_page'),
-  numberedListItem(key: 'numbered_list_item'),
-  paragraph(key: 'paragraph'),
-  pdf(key: 'pdf'),
-  quote(key: 'quote'),
-  syncedBlock(key: 'synced_block'),
-  table(key: 'table'),
-  tableOfContents(key: 'table_of_contents'),
-  tableRow(key: 'table_row'),
-  template(key: 'template'),
-  toDo(key: 'to_do'),
-  toggle(key: 'toggle'),
-  unsupporteed(key: 'unsupporteed'),
-  video(key: 'video'),
+  bookmark(key: _bookmark),
+  breadcrumb(key: _breadcrumb),
+  bulletedListItem(key: _bulletedListItem),
+  callout(key: _callout),
+  childDatabase(key: _childDatabase),
+  childPage(key: _childPage),
+  column(key: _column),
+  columnList(key: _columnList),
+  divider(key: _divider),
+  embed(key: _embed),
+  equation(key: _equation),
+  file(key: _file),
+  heading1(key: _heading1),
+  heading2(key: _heading2),
+  heading3(key: _heading3),
+  image(key: _image),
+  linkPreview(key: _linkPreview),
+  lintToPage(key: _lintToPage),
+  numberedListItem(key: _numberedListItem),
+  paragraph(key: _paragraph),
+  pdf(key: _pdf),
+  quote(key: _quote),
+  syncedBlock(key: _syncedBlock),
+  table(key: _table),
+  tableOfContents(key: _tableOfContents),
+  tableRow(key: _tableRow),
+  template(key: _template),
+  toDo(key: _toDo),
+  toggle(key: _toggle),
+  unsupporteed(key: _unsupporteed),
+  video(key: _video),
   ;
 
   const BlockType({
@@ -40,67 +72,67 @@ enum BlockType {
 
   static BlockType fromKey(String key) {
     switch (key) {
-      case 'bookmark':
+      case _bookmark:
         return BlockType.bookmark;
-      case 'breadcrump':
-        return BlockType.breadcrump;
-      case 'bulleted_list_item':
+      case _breadcrumb:
+        return BlockType.breadcrumb;
+      case _bulletedListItem:
         return BlockType.bulletedListItem;
-      case 'callout':
+      case _callout:
         return BlockType.callout;
-      case 'child_database':
+      case _childDatabase:
         return BlockType.childDatabase;
-      case 'childPage':
+      case _childPage:
         return BlockType.childPage;
-      case 'column':
+      case _column:
         return BlockType.column;
-      case 'column_list':
+      case _columnList:
         return BlockType.columnList;
-      case 'divider':
+      case _divider:
         return BlockType.divider;
-      case 'embed':
+      case _embed:
         return BlockType.embed;
-      case 'equation':
+      case _equation:
         return BlockType.equation;
-      case 'file':
+      case _file:
         return BlockType.file;
-      case 'heading1':
+      case _heading1:
         return BlockType.heading1;
-      case 'heading2':
+      case _heading2:
         return BlockType.heading2;
-      case 'heading3':
+      case _heading3:
         return BlockType.heading3;
-      case 'image':
+      case _image:
         return BlockType.image;
-      case 'link_preview':
+      case _linkPreview:
         return BlockType.linkPreview;
-      case 'lint_to_page':
+      case _lintToPage:
         return BlockType.lintToPage;
-      case 'numbered_list_item':
+      case _numberedListItem:
         return BlockType.numberedListItem;
-      case 'paragraph':
+      case _paragraph:
         return BlockType.paragraph;
-      case 'pdf':
+      case _pdf:
         return BlockType.pdf;
-      case 'quote':
+      case _quote:
         return BlockType.quote;
-      case 'synced_block':
+      case _syncedBlock:
         return BlockType.syncedBlock;
-      case 'table':
+      case _table:
         return BlockType.table;
-      case 'table_of_contents':
+      case _tableOfContents:
         return BlockType.tableOfContents;
-      case 'table_row':
+      case _tableRow:
         return BlockType.tableRow;
-      case 'template':
+      case _template:
         return BlockType.template;
-      case 'to_do':
+      case _toDo:
         return BlockType.toDo;
-      case 'toggle':
+      case _toggle:
         return BlockType.toggle;
-      case 'unsupporteed':
+      case _unsupporteed:
         return BlockType.unsupporteed;
-      case 'video':
+      case _video:
         return BlockType.video;
       default:
         throw Exception('Invalid block type');
