@@ -6,6 +6,7 @@ import 'package:notion_dogoo/src/objects/parents/parent.dart';
 import '../user.dart';
 
 part 'bookmark_block.dart';
+part 'breadcrumb_block.dart';
 
 const String _object = 'object';
 const String _id = 'id';
