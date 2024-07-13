@@ -43,4 +43,49 @@ enum Color {
     required this.key,
   });
   final String key;
+
+  static fromKey(String key) {
+    switch (key) {
+      case _blue:
+        return Color.blue;
+      case _blueBackground:
+        return Color.blueBackground;
+      case _brown:
+        return Color.brown;
+      case _brownBackground:
+        return Color.brownBackground;
+      case _default:
+        return Color.defaultColor;
+      case _gray:
+        return Color.gray;
+      case _grayBackground:
+        return Color.grayBackground;
+      case _green:
+        return Color.green;
+      case _greenBackground:
+        return Color.greenBackground;
+      case _orange:
+        return Color.orange;
+      case _orangeBackground:
+        return Color.orangeBackground;
+      case _yellow:
+        return Color.yellow;
+      case _yellowBackground:
+        return Color.yellowBackground;
+      case _pink:
+        return Color.pink;
+      case _pinkBackground:
+        return Color.pinkBackground;
+      case _purple:
+        return Color.purple;
+      case _purpleBackground:
+        return Color.purpleBackground;
+      case _red:
+        return Color.red;
+      case _redBackground:
+        return Color.redBackground;
+      default:
+        throw Exception('Invalid color key: $key');
+    }
+  }
 }
