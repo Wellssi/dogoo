@@ -4,6 +4,7 @@ const String _bulletedListItem = 'bulleted_list_item';
 const String _callout = 'callout';
 const String _childDatabase = 'child_database';
 const String _childPage = 'childPage';
+const String _code = 'code';
 const String _column = 'column';
 const String _columnList = 'column_list';
 const String _divider = 'divider';
@@ -37,6 +38,7 @@ enum BlockType {
   callout(key: _callout),
   childDatabase(key: _childDatabase),
   childPage(key: _childPage),
+  code(key: _code),
   column(key: _column),
   columnList(key: _columnList),
   divider(key: _divider),
@@ -84,6 +86,8 @@ enum BlockType {
         return BlockType.childDatabase;
       case _childPage:
         return BlockType.childPage;
+      case _code:
+        return BlockType.code;
       case _column:
         return BlockType.column;
       case _columnList:
