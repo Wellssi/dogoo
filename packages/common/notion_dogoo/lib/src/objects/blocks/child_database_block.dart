@@ -15,12 +15,12 @@ class ChildDatabaseBlock extends Block {
     required super.hasChildren,
     required super.archived,
     required super.inTrash,
-    required this.databaseTitle,
+    required this.childDatabaseTitle,
   }) : super(
           type: BlockType.childDatabase,
         );
 
-  final String databaseTitle;
+  final String childDatabaseTitle;
 
   factory ChildDatabaseBlock.fromJson(Map<String, dynamic> json) {
     return ChildDatabaseBlock(
@@ -33,7 +33,7 @@ class ChildDatabaseBlock extends Block {
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      databaseTitle: json[_childDatabase][_title],
+      childDatabaseTitle: json[_childDatabase][_title],
     );
   }
 
@@ -42,7 +42,7 @@ class ChildDatabaseBlock extends Block {
     return {
       ...super.toJson(),
       _childDatabase: {
-        _title: databaseTitle,
+        _title: childDatabaseTitle,
       },
     };
   }
