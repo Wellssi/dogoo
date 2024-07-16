@@ -11,6 +11,7 @@ part 'bulleted_list_item_block.dart';
 part 'callout_block.dart';
 part 'child_database_block.dart';
 part 'child_page_block.dart';
+part 'code_block.dart';
 
 const String _object = 'object';
 const String _id = 'id';
