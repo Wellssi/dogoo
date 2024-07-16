@@ -79,7 +79,7 @@ enum CodeLanguage {
 
   final String key;
 
-  CodeLanguage fromString(String key) {
+  static CodeLanguage fromString(String key) {
     if (key == 'abap') return abap;
     if (key == 'arduino') return arduino;
     if (key == 'bash') return bash;
