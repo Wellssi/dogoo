@@ -34,7 +34,7 @@ class ColumnListBlock extends Block {
   Map<String, Object> toJson() {
     Map<String, Object> json = super.toJson();
     json.addAll({
-      type.key: {},
+      BlockType.columnList.key: {},
     });
     return json;
   }

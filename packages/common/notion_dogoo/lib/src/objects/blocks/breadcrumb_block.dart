@@ -32,7 +32,9 @@ class BreadcrumbBlock extends Block {
   @override
   Map<String, Object> toJson() {
     Map<String, Object> json = super.toJson();
-    json.addAll({type.key: {}});
+    json.addAll({
+      BlockType.breadcrumb.key: {},
+    });
     return json;
   }
 }

@@ -38,9 +38,9 @@ class CalloutBlock extends Block {
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      richText: json[BlockType.callout.name][_richText],
-      icon: json[BlockType.callout.name][_icon],
-      color: Color.fromKey(json[BlockType.callout.name][_color]),
+      richText: json[BlockType.callout.key][_richText],
+      icon: json[BlockType.callout.key][_icon],
+      color: Color.fromKey(json[BlockType.callout.key][_color]),
     );
   }
 
@@ -49,7 +49,7 @@ class CalloutBlock extends Block {
     Map<String, Object> json = super.toJson();
     json.addAll({
       type.key: {
-        _richText: richText,
+        BlockType.callout.key: richText,
         _icon: icon,
         _color: color.key,
       }

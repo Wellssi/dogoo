@@ -38,9 +38,9 @@ class BulletedListItemBlock extends Block {
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      richText: json[BlockType.bulletedListItem.name][_richText],
-      color: Color.fromKey(json[BlockType.bulletedListItem.name][_color]),
-      children: json[BlockType.bulletedListItem.name][_children],
+      richText: json[BlockType.bulletedListItem.key][_richText],
+      color: Color.fromKey(json[BlockType.bulletedListItem.key][_color]),
+      children: json[BlockType.bulletedListItem.key][_children],
     );
   }
 
@@ -48,7 +48,7 @@ class BulletedListItemBlock extends Block {
   Map<String, Object> toJson() {
     Map<String, Object> json = super.toJson();
     json.addAll({
-      type.key: {
+      BlockType.bulletedListItem.key: {
         _richText: richText,
         _color: color.key,
         _children: children.map((e) => e.toJson()).toList(),

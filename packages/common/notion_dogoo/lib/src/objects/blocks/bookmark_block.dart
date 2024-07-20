@@ -36,8 +36,8 @@ class BookmarkBlock extends Block {
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      caption: json[BlockType.bookmark.name][_caption],
-      url: json[BlockType.bookmark.name][_url],
+      caption: json[BlockType.bookmark.key][_caption],
+      url: json[BlockType.bookmark.key][_url],
     );
   }
 
@@ -45,7 +45,7 @@ class BookmarkBlock extends Block {
   Map<String, Object> toJson() {
     Map<String, Object> json = super.toJson();
     json.addAll({
-      type.key: {
+      BlockType.bookmark.key: {
         _caption: caption,
         _url: url,
       }

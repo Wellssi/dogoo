@@ -39,9 +39,9 @@ class CodeBlock extends Block {
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      caption: json[BlockType.code.name][_caption],
-      richText: json[BlockType.code.name][_richText],
-      language: CodeLanguage.fromString(json[BlockType.code.name][_language]),
+      caption: json[BlockType.code.key][_caption],
+      richText: json[BlockType.code.key][_richText],
+      language: CodeLanguage.fromString(json[BlockType.code.key][_language]),
     );
   }
 
@@ -49,7 +49,7 @@ class CodeBlock extends Block {
   Map<String, Object> toJson() {
     Map<String, Object> json = super.toJson();
     json.addAll({
-      type.name: {
+      BlockType.code.key: {
         _caption: caption,
         _richText: richText,
         _language: language.key,

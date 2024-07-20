@@ -1,7 +1,5 @@
 part of 'block.dart';
 
-const String _childPage = 'child_database';
-
 /// REF: https://developers.notion.com/reference/block#child-page
 class ChildPageBlock extends Block {
   ChildPageBlock({
@@ -32,7 +30,7 @@ class ChildPageBlock extends Block {
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      childPageTitle: json[_childPage][_title],
+      childPageTitle: json[BlockType.childPage.key][_title],
     );
   }
 
@@ -40,7 +38,9 @@ class ChildPageBlock extends Block {
   Map<String, Object> toJson() {
     Map<String, Object> json = super.toJson();
     json.addAll({
-      type.key: {_title: childPageTitle}
+      BlockType.childPage.key: {
+        _title: childPageTitle,
+      }
     });
     return json;
   }
