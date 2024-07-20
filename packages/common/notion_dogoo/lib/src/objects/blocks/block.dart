@@ -18,6 +18,9 @@ part 'divider_block.dart';
 part 'embed_block.dart';
 part 'equation_block.dart';
 part 'file_block.dart';
+part 'heading_1_block.dart';
+part 'heading_2_block.dart';
+part 'heading_3_block.dart';
 
 const String _object = 'object';
 const String _id = 'id';
