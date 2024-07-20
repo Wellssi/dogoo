@@ -1,8 +1,5 @@
 part of 'block.dart';
 
-const String _file = 'file';
-const String _name = 'name';
-
 /// REF: https://developers.notion.com/reference/block#file
 class FileBlock extends Block {
   FileBlock({

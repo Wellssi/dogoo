@@ -1,7 +1,5 @@
 part of 'block.dart';
 
-const String _expression = 'expression';
-
 /// REF: https://developers.notion.com/reference/block#equation
 class EquationBlock extends Block {
   EquationBlock({

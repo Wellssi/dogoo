@@ -1,7 +1,5 @@
 part of 'block.dart';
 
-const String _language = 'language';
-
 class CodeBlock extends Block {
   CodeBlock({
     required super.id,

@@ -1,7 +1,5 @@
 part of 'block.dart';
 
-const String _icon = 'icon';
-
 /// REF: https://developers.notion.com/reference/block#callout
 class CalloutBlock extends Block {
   CalloutBlock({

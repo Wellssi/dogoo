@@ -1,9 +1,5 @@
 part of 'block.dart';
 
-const String _richText = 'rich_text';
-const String _color = 'color';
-const String _children = 'children';
-
 class BulletedListItemBlock extends Block {
   BulletedListItemBlock({
     required super.id,

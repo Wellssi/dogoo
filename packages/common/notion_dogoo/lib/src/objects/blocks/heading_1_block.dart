@@ -1,7 +1,5 @@
 part of 'block.dart';
 
-const String _isToggleable = 'is_toggleable';
-
 /// REF: https://developers.notion.com/reference/block#headings
 class Heading1Block extends Block {
   Heading1Block({

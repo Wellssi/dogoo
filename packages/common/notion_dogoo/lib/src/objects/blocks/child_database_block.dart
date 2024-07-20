@@ -1,7 +1,5 @@
 part of 'block.dart';
 
-const String _title = 'title';
-
 /// REF: https://developers.notion.com/reference/block#child-database
 class ChildDatabaseBlock extends Block {
   ChildDatabaseBlock({

@@ -5,6 +5,7 @@ import 'package:notion_dogoo/src/objects/parents/parent.dart';
 
 import '../user.dart';
 
+part 'block_key.dart';
 part 'bookmark_block.dart';
 part 'breadcrumb_block.dart';
 part 'bulleted_list_item_block.dart';
@@ -22,18 +23,7 @@ part 'heading_1_block.dart';
 part 'heading_2_block.dart';
 part 'heading_3_block.dart';
 
-const String _object = 'object';
-const String _id = 'id';
-const String _parent = 'parent';
-const String _type = 'type';
-const String _createdTime = 'created_time';
-const String _lastEditedTime = 'last_edited_time';
-const String _createdBy = 'created_by';
-const String _lastEditedBy = 'last_edited_by';
-const String _hasChildren = 'has_children';
-const String _archived = 'archived';
-const String _inTrash = 'in_trash';
-
+/// REF: https://developers.notion.com/reference/block
 class Block {
   const Block({
     required this.id,

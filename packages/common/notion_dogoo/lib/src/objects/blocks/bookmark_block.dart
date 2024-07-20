@@ -1,8 +1,5 @@
 part of 'block.dart';
 
-const String _caption = 'caption';
-const String _url = 'url';
-
 /// REF: https://developers.notion.com/reference/block#bookmark
 class BookmarkBlock extends Block {
   BookmarkBlock({
