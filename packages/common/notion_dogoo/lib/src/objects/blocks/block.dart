@@ -1,9 +1,7 @@
 library notion_dogoo.objects.blocks;
 
 import 'package:notion_dogoo/src/constants/constants.dart';
-import 'package:notion_dogoo/src/objects/parents/parent.dart';
-
-import '../user.dart';
+import 'package:notion_dogoo/src/objects/objects.dart';
 
 part 'block_key.dart';
 part 'bookmark_block.dart';

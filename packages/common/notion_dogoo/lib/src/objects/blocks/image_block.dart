@@ -12,13 +12,12 @@ class ImageBlock extends Block {
     required super.hasChildren,
     required super.archived,
     required super.inTrash,
-    required this.file,
+    required this.image,
   }) : super(
           type: BlockType.image,
         );
 
-  // TODO(Just-gomin): Implement this. File Object
-  final Object file;
+  final File image;
 
   factory ImageBlock.fromJson(Map<String, dynamic> json) {
     return ImageBlock(
@@ -31,7 +30,16 @@ class ImageBlock extends Block {
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      file: json[BlockType.image.key][_file],
+      image: File.fromJson(json[BlockType.image.key]),
     );
+  }
+
+  @override
+  Map<String, Object> toJson() {
+    Map<String, Object> json = super.toJson();
+    json.addAll({
+      BlockType.image.key: image.toJson(),
+    });
+    return json;
   }
 }
