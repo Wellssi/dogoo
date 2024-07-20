@@ -1,5 +1,6 @@
 library notion_dogoo.objects.blocks;
 
+import 'package:notion_dogoo/src/constants/block_type.dart';
 import 'package:notion_dogoo/src/constants/constants.dart';
 import 'package:notion_dogoo/src/objects/parents/parent.dart';
 
@@ -16,6 +17,7 @@ part 'column_block.dart';
 part 'column_list_block.dart';
 part 'divider_block.dart';
 part 'embed_block.dart';
+part 'equation_block.dart';
 
 const String _object = 'object';
 const String _id = 'id';
