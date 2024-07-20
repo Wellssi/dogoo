@@ -31,9 +31,10 @@ class DividerBlock extends Block {
 
   @override
   Map<String, Object> toJson() {
-    return {
-      ...super.toJson(),
-      type.name: {},
-    };
+    Map<String, Object> json = super.toJson();
+    json.addAll({
+      type.key: {},
+    });
+    return json;
   }
 }

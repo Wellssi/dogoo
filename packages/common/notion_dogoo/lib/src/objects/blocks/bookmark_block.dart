@@ -43,12 +43,13 @@ class BookmarkBlock extends Block {
 
   @override
   Map<String, Object> toJson() {
-    return {
-      ...super.toJson(),
-      BlockType.bookmark.name: {
+    Map<String, Object> json = super.toJson();
+    json.addAll({
+      type.key: {
         _caption: caption,
         _url: url,
-      },
-    };
+      }
+    });
+    return json;
   }
 }

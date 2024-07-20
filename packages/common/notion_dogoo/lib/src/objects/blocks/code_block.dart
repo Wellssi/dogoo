@@ -47,13 +47,14 @@ class CodeBlock extends Block {
 
   @override
   Map<String, Object> toJson() {
-    return {
-      ...super.toJson(),
-      BlockType.code.name: {
+    Map<String, Object> json = super.toJson();
+    json.addAll({
+      type.name: {
         _caption: caption,
         _richText: richText,
         _language: language.key,
-      },
-    };
+      }
+    });
+    return json;
   }
 }

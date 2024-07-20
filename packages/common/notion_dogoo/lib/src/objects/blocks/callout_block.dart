@@ -46,13 +46,14 @@ class CalloutBlock extends Block {
 
   @override
   Map<String, Object> toJson() {
-    return {
-      ...super.toJson(),
-      BlockType.callout.name: {
+    Map<String, Object> json = super.toJson();
+    json.addAll({
+      type.key: {
         _richText: richText,
         _icon: icon,
         _color: color.key,
-      },
-    };
+      }
+    });
+    return json;
   }
 }

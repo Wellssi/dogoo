@@ -28,4 +28,11 @@ class BreadcrumbBlock extends Block {
       inTrash: json[_inTrash],
     );
   }
+
+  @override
+  Map<String, Object> toJson() {
+    Map<String, Object> json = super.toJson();
+    json.addAll({type.key: {}});
+    return json;
+  }
 }

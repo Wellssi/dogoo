@@ -46,13 +46,14 @@ class BulletedListItemBlock extends Block {
 
   @override
   Map<String, Object> toJson() {
-    return {
-      ...super.toJson(),
-      BlockType.bulletedListItem.name: {
+    Map<String, Object> json = super.toJson();
+    json.addAll({
+      type.key: {
         _richText: richText,
         _color: color.key,
         _children: children.map((e) => e.toJson()).toList(),
-      },
-    };
+      }
+    });
+    return json;
   }
 }

@@ -38,11 +38,10 @@ class ChildPageBlock extends Block {
 
   @override
   Map<String, Object> toJson() {
-    return {
-      ...super.toJson(),
-      _childPage: {
-        _title: childPageTitle,
-      },
-    };
+    Map<String, Object> json = super.toJson();
+    json.addAll({
+      type.key: {_title: childPageTitle}
+    });
+    return json;
   }
 }

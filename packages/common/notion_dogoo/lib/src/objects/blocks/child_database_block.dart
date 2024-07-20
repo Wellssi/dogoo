@@ -39,11 +39,10 @@ class ChildDatabaseBlock extends Block {
 
   @override
   Map<String, Object> toJson() {
-    return {
-      ...super.toJson(),
-      _childDatabase: {
-        _title: childDatabaseTitle,
-      },
-    };
+    Map<String, Object> json = super.toJson();
+    json.addAll({
+      type.key: {_title: childDatabaseTitle}
+    });
+    return json;
   }
 }
