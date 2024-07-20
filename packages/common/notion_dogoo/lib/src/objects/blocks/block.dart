@@ -14,6 +14,7 @@ part 'child_page_block.dart';
 part 'code_block.dart';
 part 'column_block.dart';
 part 'column_list_block.dart';
+part 'divider_block.dart';
 
 const String _object = 'object';
 const String _id = 'id';
