@@ -22,6 +22,7 @@ part 'heading_2_block.dart';
 part 'heading_3_block.dart';
 part 'image_block.dart';
 part 'link_preview_block.dart';
+part 'mention_block.dart';
 
 /// REF: https://developers.notion.com/reference/block
 class Block {
