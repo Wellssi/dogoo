@@ -25,6 +25,7 @@ part 'link_preview_block.dart';
 part 'mention_block.dart';
 part 'numbered_list_item_block.dart';
 part 'paragraph_block.dart';
+part 'pdf_block.dart';
 
 /// REF: https://developers.notion.com/reference/block
 class Block {
