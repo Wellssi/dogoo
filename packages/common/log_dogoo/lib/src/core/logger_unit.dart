@@ -103,7 +103,7 @@ class LoggerUnit {
       filter: filter ?? _filter,
       formatter: formatter ?? _formatter,
       printer: printer ?? _printer,
-      printCallback: printCallback,
+      printCallback: printCallback ?? this.printCallback,
     );
   }
 }
