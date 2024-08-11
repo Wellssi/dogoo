@@ -80,6 +80,7 @@ class LoggerUnit {
     } catch (e) {
       logResult = LogResult(
         success: false,
+        filtered: !isValid,
         logData: logData,
         exception: e is Exception ? e : Exception(e.toString()),
       );
