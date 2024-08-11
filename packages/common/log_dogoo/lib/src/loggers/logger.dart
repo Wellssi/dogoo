@@ -9,132 +9,186 @@ class Logger {
   static final Logger _instance = Logger.initiate();
   Logger.initiate();
 
-  LoggerUnit _loggerUnit = LoggerUnit(
+  LogLevel leastLevel = traceLevel;
+  late final BasicFilter defaultFilter = BasicFilter(
+    leastLevel: leastLevel,
+  );
+  final BasicFormatter defaultFormatter = BasicFormatter();
+  final ConsolePrinter defaultPrinter = ConsolePrinter();
+
+  late LoggerUnit traceLoggerUnit = LoggerUnit(
     level: traceLevel,
-    filter: BasicFilter(),
-    formatter: BasicFormatter(),
-    printer: ConsolePrinter(),
+    filter: defaultFilter,
+    formatter: defaultFormatter,
+    printer: defaultPrinter,
+  );
+
+  late LoggerUnit debugLoggerUnit = LoggerUnit(
+    level: debugLevel,
+    filter: defaultFilter,
+    formatter: defaultFormatter,
+    printer: defaultPrinter,
+  );
+
+  late LoggerUnit infoLoggerUnit = LoggerUnit(
+    level: infoLevel,
+    filter: defaultFilter,
+    formatter: defaultFormatter,
+    printer: defaultPrinter,
+  );
+
+  late LoggerUnit warningLoggerUnit = LoggerUnit(
+    level: warningLevel,
+    filter: defaultFilter,
+    formatter: defaultFormatter,
+    printer: defaultPrinter,
+  );
+
+  late LoggerUnit errorLoggerUnit = LoggerUnit(
+    level: errorLevel,
+    filter: defaultFilter,
+    formatter: defaultFormatter,
+    printer: defaultPrinter,
+  );
+
+  late LoggerUnit fatalLoggerUnit = LoggerUnit(
+    level: fatalLevel,
+    filter: defaultFilter,
+    formatter: defaultFormatter,
+    printer: defaultPrinter,
   );
 
   void initialize({
-    LogLevel? level,
     LogFilter? filter,
     LogFormatter? formatter,
     LogPrinter? printer,
     dynamic Function(LogResult)? printCallback,
   }) {
-    _loggerUnit = _loggerUnit.copyWith(
-      level: level,
-      filter: filter,
-      formatter: formatter,
-      printer: printer,
+    traceLoggerUnit = traceLoggerUnit.copyWith(
+      filter: filter ?? defaultFilter,
+      formatter: formatter ?? defaultFormatter,
+      printer: printer ?? defaultPrinter,
+      printCallback: printCallback,
+    );
+    debugLoggerUnit = debugLoggerUnit.copyWith(
+      filter: filter ?? defaultFilter,
+      formatter: formatter ?? defaultFormatter,
+      printer: printer ?? defaultPrinter,
+      printCallback: printCallback,
+    );
+    infoLoggerUnit = infoLoggerUnit.copyWith(
+      filter: filter ?? defaultFilter,
+      formatter: formatter ?? defaultFormatter,
+      printer: printer ?? defaultPrinter,
+      printCallback: printCallback,
+    );
+    warningLoggerUnit = warningLoggerUnit.copyWith(
+      filter: filter ?? defaultFilter,
+      formatter: formatter ?? defaultFormatter,
+      printer: printer ?? defaultPrinter,
+      printCallback: printCallback,
+    );
+    errorLoggerUnit = errorLoggerUnit.copyWith(
+      filter: filter ?? defaultFilter,
+      formatter: formatter ?? defaultFormatter,
+      printer: printer ?? defaultPrinter,
+      printCallback: printCallback,
+    );
+    fatalLoggerUnit = fatalLoggerUnit.copyWith(
+      filter: filter ?? defaultFilter,
+      formatter: formatter ?? defaultFormatter,
+      printer: printer ?? defaultPrinter,
       printCallback: printCallback,
     );
   }
 
-  Future<void> log(LogData logData) async {
-    await _loggerUnit(logData);
-  }
-
   /// Log of [traceLevel]
-  void t(
+  Future<LogResult> t(
     dynamic message, {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
   }) {
-    final LogData logData = LogData(
-      traceLevel,
+    return traceLoggerUnit(
       message,
       time: time,
       error: error,
       stackTrace: stackTrace,
     );
-    log(logData);
   }
 
   /// Log of [debugLevel]
-  void d(
+  Future<LogResult> d(
     dynamic message, {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
   }) {
-    final LogData logData = LogData(
-      debugLevel,
+    return debugLoggerUnit(
       message,
       time: time,
       error: error,
       stackTrace: stackTrace,
     );
-    log(logData);
   }
 
   /// Log of [infoLevel]
-  void i(
+  Future<LogResult> i(
     dynamic message, {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
   }) {
-    final LogData logData = LogData(
-      infoLevel,
+    return infoLoggerUnit(
       message,
       time: time,
       error: error,
       stackTrace: stackTrace,
     );
-    log(logData);
   }
 
   /// Log of [warningLevel]
-  void w(
+  Future<LogResult> w(
     dynamic message, {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
   }) {
-    final LogData logData = LogData(
-      warningLevel,
+    return warningLoggerUnit(
       message,
       time: time,
       error: error,
       stackTrace: stackTrace,
     );
-    log(logData);
   }
 
   /// Log of [errorLevel]
-  void e(
+  Future<LogResult> e(
     dynamic message, {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
   }) {
-    final LogData logData = LogData(
-      errorLevel,
+    return errorLoggerUnit(
       message,
       time: time,
       error: error,
       stackTrace: stackTrace,
     );
-    log(logData);
   }
 
   /// Log of [fatalLevel]
-  void f(
+  Future<LogResult> f(
     dynamic message, {
     DateTime? time,
     Object? error,
     StackTrace? stackTrace,
   }) {
-    final LogData logData = LogData(
-      fatalLevel,
+    return fatalLoggerUnit(
       message,
       time: time,
       error: error,
       stackTrace: stackTrace,
     );
-    log(logData);
   }
 }
