@@ -27,7 +27,7 @@ analyzer:
     unrelated_type_equality_checks: warning
     deprecated_member_use_from_same_package: ignore
     parameter_assignments: warning
-    todo: ignore
+    todo: info
 
 linter:
   rules:

@@ -1,0 +1,17 @@
+name: log_dogoo
+description: Provides simple log functions. This is part of the 'dogoo' package that provides 'Dart' and 'Flutter' utilities.
+version: 0.1.0
+repository: https://github.com/Wellssi/dogoo/tree/develop/packages/common/log_dogoo
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  # path: ^1.8.0
+  datetime_dogoo: ^0.1.0
+  map_dogoo: ^0.1.0
+  num_dogoo: ^0.1.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
