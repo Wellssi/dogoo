@@ -44,18 +44,18 @@ class BasicFormatter implements LogFormatter {
   @override
   Future<void> init() async {}
 
-  /// If [obj]'s type is [Map] or [Iterable],
+  /// If [message]'s type is [Map] or [Iterable],
   /// then return prettyJson.
-  /// If [obj]'s type is not [Map] or [Iterable],
+  /// If [message]'s type is not [Map] or [Iterable],
   /// then return [obj.toString()].
-  String _genPrettyJsonString(dynamic obj) {
+  String _genPrettyJsonString(dynamic message) {
     String result = '';
     final JsonEncoder encoder = JsonEncoder.withIndent(' ' * indentSize);
 
-    if (obj is Map || obj is Iterable) {
-      result = encoder.convert(obj);
+    if (message is Map || message is Iterable) {
+      result = encoder.convert(message);
     } else {
-      result = obj.toString();
+      result = message.toString();
     }
 
     return result;
