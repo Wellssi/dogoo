@@ -24,6 +24,7 @@ class Logger {
       error: error,
       stackTrace: stackTrace,
     );
+    log(logData);
   }
 
   /// Log of [debugLevel]
@@ -40,6 +41,7 @@ class Logger {
       error: error,
       stackTrace: stackTrace,
     );
+    log(logData);
   }
 
   /// Log of [infoLevel]
@@ -56,6 +58,7 @@ class Logger {
       error: error,
       stackTrace: stackTrace,
     );
+    log(logData);
   }
 
   /// Log of [warningLevel]
@@ -72,6 +75,7 @@ class Logger {
       error: error,
       stackTrace: stackTrace,
     );
+    log(logData);
   }
 
   /// Log of [errorLevel]
@@ -88,6 +92,7 @@ class Logger {
       error: error,
       stackTrace: stackTrace,
     );
+    log(logData);
   }
 
   /// Log of [fatalLevel]
@@ -104,5 +109,6 @@ class Logger {
       error: error,
       stackTrace: stackTrace,
     );
+    log(logData);
   }
 }
