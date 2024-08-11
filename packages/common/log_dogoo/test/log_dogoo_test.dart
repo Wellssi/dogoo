@@ -1,4 +1,3 @@
-import 'package:log_dogoo/log_dogoo.dart';
 import 'package:test/test.dart';
 
 void main() {
