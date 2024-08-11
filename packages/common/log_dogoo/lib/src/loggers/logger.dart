@@ -9,10 +9,7 @@ class Logger {
   static final Logger _instance = Logger.initiate();
   Logger.initiate();
 
-  LogLevel leastLevel = traceLevel;
-  late final BasicFilter defaultFilter = BasicFilter(
-    leastLevel: leastLevel,
-  );
+  final BasicFilter defaultFilter = BasicFilter();
   final BasicFormatter defaultFormatter = BasicFormatter();
   final ConsolePrinter defaultPrinter = ConsolePrinter();
 
