@@ -9,50 +9,50 @@ class Logger {
   static final Logger _instance = Logger.initiate();
   Logger.initiate();
 
-  final BasicFilter defaultFilter = BasicFilter();
-  final BasicFormatter defaultFormatter = BasicFormatter();
-  final ConsolePrinter defaultPrinter = ConsolePrinter();
+  LogFilter _filter = BasicFilter();
+  LogFormatter _formatter = BasicFormatter();
+  LogPrinter _printer = ConsolePrinter();
 
   late LoggerUnit traceLoggerUnit = LoggerUnit(
     level: traceLevel,
-    filter: defaultFilter,
-    formatter: defaultFormatter,
-    printer: defaultPrinter,
+    filter: _filter,
+    formatter: _formatter,
+    printer: _printer,
   );
 
   late LoggerUnit debugLoggerUnit = LoggerUnit(
     level: debugLevel,
-    filter: defaultFilter,
-    formatter: defaultFormatter,
-    printer: defaultPrinter,
+    filter: _filter,
+    formatter: _formatter,
+    printer: _printer,
   );
 
   late LoggerUnit infoLoggerUnit = LoggerUnit(
     level: infoLevel,
-    filter: defaultFilter,
-    formatter: defaultFormatter,
-    printer: defaultPrinter,
+    filter: _filter,
+    formatter: _formatter,
+    printer: _printer,
   );
 
   late LoggerUnit warningLoggerUnit = LoggerUnit(
     level: warningLevel,
-    filter: defaultFilter,
-    formatter: defaultFormatter,
-    printer: defaultPrinter,
+    filter: _filter,
+    formatter: _formatter,
+    printer: _printer,
   );
 
   late LoggerUnit errorLoggerUnit = LoggerUnit(
     level: errorLevel,
-    filter: defaultFilter,
-    formatter: defaultFormatter,
-    printer: defaultPrinter,
+    filter: _filter,
+    formatter: _formatter,
+    printer: _printer,
   );
 
   late LoggerUnit fatalLoggerUnit = LoggerUnit(
     level: fatalLevel,
-    filter: defaultFilter,
-    formatter: defaultFormatter,
-    printer: defaultPrinter,
+    filter: _filter,
+    formatter: _formatter,
+    printer: _printer,
   );
 
   void initialize({
@@ -61,41 +61,65 @@ class Logger {
     LogPrinter? printer,
     dynamic Function(LogResult)? printCallback,
   }) {
+    _filter = filter ?? _filter;
+    _formatter = formatter ?? _formatter;
+    _printer = printer ?? _printer;
+
     traceLoggerUnit = traceLoggerUnit.copyWith(
-      filter: filter ?? defaultFilter,
-      formatter: formatter ?? defaultFormatter,
-      printer: printer ?? defaultPrinter,
+      filter: filter ?? _filter,
+      formatter: formatter ?? _formatter,
+      printer: printer ?? _printer,
       printCallback: printCallback,
     );
     debugLoggerUnit = debugLoggerUnit.copyWith(
-      filter: filter ?? defaultFilter,
-      formatter: formatter ?? defaultFormatter,
-      printer: printer ?? defaultPrinter,
+      filter: filter ?? _filter,
+      formatter: formatter ?? _formatter,
+      printer: printer ?? _printer,
       printCallback: printCallback,
     );
     infoLoggerUnit = infoLoggerUnit.copyWith(
-      filter: filter ?? defaultFilter,
-      formatter: formatter ?? defaultFormatter,
-      printer: printer ?? defaultPrinter,
+      filter: filter ?? _filter,
+      formatter: formatter ?? _formatter,
+      printer: printer ?? _printer,
       printCallback: printCallback,
     );
     warningLoggerUnit = warningLoggerUnit.copyWith(
-      filter: filter ?? defaultFilter,
-      formatter: formatter ?? defaultFormatter,
-      printer: printer ?? defaultPrinter,
+      filter: filter ?? _filter,
+      formatter: formatter ?? _formatter,
+      printer: printer ?? _printer,
       printCallback: printCallback,
     );
     errorLoggerUnit = errorLoggerUnit.copyWith(
-      filter: filter ?? defaultFilter,
-      formatter: formatter ?? defaultFormatter,
-      printer: printer ?? defaultPrinter,
+      filter: filter ?? _filter,
+      formatter: formatter ?? _formatter,
+      printer: printer ?? _printer,
       printCallback: printCallback,
     );
     fatalLoggerUnit = fatalLoggerUnit.copyWith(
-      filter: filter ?? defaultFilter,
-      formatter: formatter ?? defaultFormatter,
-      printer: printer ?? defaultPrinter,
+      filter: filter ?? _filter,
+      formatter: formatter ?? _formatter,
+      printer: printer ?? _printer,
       printCallback: printCallback,
+    );
+  }
+
+  Future<LogResult> call(
+    dynamic message, {
+    LogLevel? level,
+    DateTime? time,
+    Object? error,
+    StackTrace? stackTrace,
+  }) async {
+    return LoggerUnit(
+      level: level ?? traceLevel,
+      filter: _filter,
+      formatter: _formatter,
+      printer: _printer,
+    )(
+      message,
+      time: time,
+      error: error,
+      stackTrace: stackTrace,
     );
   }
 
