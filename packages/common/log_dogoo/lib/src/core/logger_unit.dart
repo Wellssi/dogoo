@@ -90,4 +90,20 @@ class LoggerUnit {
 
     return logResult;
   }
+
+  LoggerUnit copyWith({
+    LogLevel? level,
+    LogFilter? filter,
+    LogFormatter? formatter,
+    LogPrinter? printer,
+    dynamic Function(LogResult)? printCallback,
+  }) {
+    return LoggerUnit(
+      level: level ?? _level,
+      filter: filter ?? _filter,
+      formatter: formatter ?? _formatter,
+      printer: printer ?? _printer,
+      printCallback: printCallback,
+    );
+  }
 }
