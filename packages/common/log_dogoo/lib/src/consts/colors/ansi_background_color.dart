@@ -29,9 +29,7 @@ enum AnsiBackgroundColor {
   final String value;
 
   const AnsiBackgroundColor(this.value);
-}
 
-extension AnsiBackgroundColorExtension on AnsiBackgroundColor {
   String toColorString() {
     return ansiColorPrefix + value;
   }
