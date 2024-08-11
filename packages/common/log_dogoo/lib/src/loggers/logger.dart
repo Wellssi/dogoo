@@ -1,14 +1,40 @@
-import 'core/core.dart';
-import 'levels/levels.dart';
+import '../core/core.dart';
+import '../filters/filters.dart';
+import '../formatters/basic_formatter.dart';
+import '../levels/levels.dart';
+import '../printers/printers.dart';
 
 class Logger {
-  final LogLevel leastLevel;
+  factory Logger() => _instance;
+  static final Logger _instance = Logger.initiate();
+  Logger.initiate();
 
-  Logger({
-    LogLevel? leastLevel,
-  }) : leastLevel = leastLevel ?? traceLevel;
+  LoggerUnit _loggerUnit = LoggerUnit(
+    level: traceLevel,
+    filter: BasicFilter(),
+    formatter: BasicFormatter(),
+    printer: ConsolePrinter(),
+  );
 
-  void log(LogData logData) {}
+  void initialize({
+    LogLevel? level,
+    LogFilter? filter,
+    LogFormatter? formatter,
+    LogPrinter? printer,
+    dynamic Function(LogResult)? printCallback,
+  }) {
+    _loggerUnit = _loggerUnit.copyWith(
+      level: level,
+      filter: filter,
+      formatter: formatter,
+      printer: printer,
+      printCallback: printCallback,
+    );
+  }
+
+  Future<void> log(LogData logData) async {
+    await _loggerUnit(logData);
+  }
 
   /// Log of [traceLevel]
   void t(
