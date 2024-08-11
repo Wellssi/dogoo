@@ -86,6 +86,8 @@ class LoggerUnit {
       );
     }
 
+    printCallback?.call(logResult);
+
     return logResult;
   }
 }
