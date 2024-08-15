@@ -23,3 +23,5 @@ const String _expression = 'expression';
 const String _file = 'file';
 const String _name = 'name';
 const String _isToggleable = 'is_toggleable';
+const String _syncedFrom = 'synced_from';
+const String _blockId = 'block_id';
