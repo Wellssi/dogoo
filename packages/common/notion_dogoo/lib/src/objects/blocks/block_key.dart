@@ -29,3 +29,4 @@ const String _tableWidth = 'table_width';
 const String _hasColumnHeader = 'has_column_header';
 const String _hasRowHeader = 'has_row_header';
 const String _cells = 'cells';
+const String _checked = 'checked';

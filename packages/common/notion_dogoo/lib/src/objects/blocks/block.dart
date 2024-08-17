@@ -31,6 +31,7 @@ part 'synced_block.dart';
 part 'table_block.dart';
 part 'table_row_block.dart';
 part 'table_of_contents_block.dart';
+part 'to_do_block.dart';
 
 /// REF: https://developers.notion.com/reference/block
 class Block {
