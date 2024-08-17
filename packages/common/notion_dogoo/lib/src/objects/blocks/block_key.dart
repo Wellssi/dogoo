@@ -25,3 +25,6 @@ const String _name = 'name';
 const String _isToggleable = 'is_toggleable';
 const String _syncedFrom = 'synced_from';
 const String _blockId = 'block_id';
+const String _tableWidth = 'table_width';
+const String _hasColumnHeader = 'has_column_header';
+const String _hasRowHeader = 'has_row_header';
