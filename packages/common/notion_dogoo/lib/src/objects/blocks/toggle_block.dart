@@ -16,7 +16,7 @@ class ToggleBlock extends Block {
     this.color = Color.defaultColor,
     required this.children,
   }) : super(
-          type: BlockType.toDo,
+          type: BlockType.toggle,
         );
 
   // TODO(Just-gomin): Implement this. array of rich text objects.
