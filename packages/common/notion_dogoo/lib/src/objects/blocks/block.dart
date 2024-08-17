@@ -59,6 +59,7 @@ class Block {
 
   String get object => 'block';
 
+  // TODO(Just-gomin): Return proper Block type objects.
   factory Block.fromJson(Map<String, dynamic> json) {
     return Block(
       id: json[_id],
