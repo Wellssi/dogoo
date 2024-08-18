@@ -20,17 +20,11 @@ class RichText {
   });
 
   factory RichText.fromJson(Map<String, dynamic> json) {
-    final RichTextType type = RichTextType.fromKey(json[_type]);
-    final Map<String, Object> annotaions = json[type.key][_annotations];
-    final String plainText = json[type.key][_plainText];
-    final String? href =
-        json[type.key].containsKey(_href) ? json[type.key][_href] : null;
-
     return RichText(
-      type: type,
-      annotaions: Annotaion.fromJson(annotaions),
-      plainText: plainText,
-      href: href,
+      type: RichTextType.fromKey(json[_type]),
+      annotaions: Annotaion.fromJson(json[_annotations]),
+      plainText: json[_plainText],
+      href: json[_href],
     );
   }
 
