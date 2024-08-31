@@ -3,6 +3,7 @@ library notion_dogoo.objects.blocks.rich_text;
 import 'package:notion_dogoo/src/constants/constants.dart';
 
 part 'annotation.dart';
+part 'equation_rich_text.dart';
 part 'rich_text_key.dart';
 
 /// REF: https://developers.notion.com/reference/rich-text

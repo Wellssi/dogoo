@@ -10,3 +10,4 @@ const String _strikethrough = 'strikethrough';
 const String _underline = 'underline';
 const String _code = 'code';
 const String _color = 'color';
+const String _expression = 'expression';
