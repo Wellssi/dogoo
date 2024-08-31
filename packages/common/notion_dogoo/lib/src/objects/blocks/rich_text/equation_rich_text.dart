@@ -5,6 +5,7 @@ class EquationRichText extends RichText {
   EquationRichText({
     required super.annotaions,
     required super.plainText,
+    super.href,
     required this.expression,
   }) : super(
           type: RichTextType.equation,
