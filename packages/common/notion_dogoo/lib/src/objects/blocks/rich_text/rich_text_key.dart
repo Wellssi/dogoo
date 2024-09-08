@@ -18,3 +18,5 @@ const String _end = 'end';
 const String _url = 'url';
 const String _templateMentionDate = 'template_mention_date';
 const String _user = 'user';
+const String _content = 'content';
+const String _link = 'link';

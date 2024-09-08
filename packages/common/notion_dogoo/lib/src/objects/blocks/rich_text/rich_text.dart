@@ -6,6 +6,7 @@ part 'annotation.dart';
 part 'equation_rich_text.dart';
 part 'mention_rich_text.dart';
 part 'rich_text_key.dart';
+part 'text_rich_text.dart';
 
 /// REF: https://developers.notion.com/reference/rich-text
 class RichText {
