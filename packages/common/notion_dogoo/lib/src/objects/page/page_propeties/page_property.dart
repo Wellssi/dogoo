@@ -10,10 +10,17 @@ class PageProperty {
   final PagePropertyType type;
 
   factory PageProperty.fromJson(Map<String, dynamic> json) {
-    return PageProperty(
-      id: json[_id],
-      type: PagePropertyType.fromKey(json[_type]),
-    );
+    PagePropertyType type = PagePropertyType.fromKey(json[_type]);
+
+    switch (type) {
+      case PagePropertyType.checkbox:
+        return CheckboxPageProperty.fromJson(json);
+      default:
+        return PageProperty(
+          id: json[_id],
+          type: type,
+        );
+    }
   }
 
   Map<String, Object> toJson() {
