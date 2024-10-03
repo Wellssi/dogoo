@@ -4,6 +4,8 @@ import 'package:notion_dogoo/src/objects/file.dart';
 import 'package:notion_dogoo/src/objects/parents/parent.dart';
 import 'package:notion_dogoo/src/objects/user.dart';
 
+import 'page_propeties/page_properties.dart';
+
 part 'page_key.dart';
 
 /// REF: https://developers.notion.com/reference/page
@@ -34,8 +36,7 @@ class Page {
   // TODO(Just-gomin): Implement this. An emoji or file.
   final Object icon;
   final File cover;
-  // TODO(Just-gomin): Implement this. Map of Page Properties.
-  final Object properties;
+  final Map<String, PageProperty> properties;
   final Parent parent;
   final String url;
   final String publicUrl;
@@ -54,7 +55,7 @@ class Page {
       inTrash: json[_inTrash],
       icon: json[_icon],
       cover: File.fromJson(json[_cover]),
-      properties: json[_properties],
+      properties: PageProperties.fromJson(json[_properties]),
       parent: Parent.fromJson(json[_parent]),
       url: json[_url],
       publicUrl: json[_publicUrl],
@@ -73,7 +74,7 @@ class Page {
       _inTrash: inTrash,
       _icon: icon,
       _cover: cover.toJson(),
-      _properties: properties,
+      _properties: PageProperties.toJson(properties),
       _parent: parent.toJson(),
       _url: url,
       _publicUrl: publicUrl,
