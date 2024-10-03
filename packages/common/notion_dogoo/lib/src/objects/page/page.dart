@@ -43,7 +43,6 @@ class Page {
 
   String get object => 'page';
 
-  // TODO(Just-gomin): Return proper Block type objects.
   factory Page.fromJson(Map<String, dynamic> json) {
     return Page(
       id: json[_id],
