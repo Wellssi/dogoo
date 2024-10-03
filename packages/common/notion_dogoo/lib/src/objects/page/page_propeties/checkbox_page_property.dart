@@ -1,5 +1,6 @@
 part of 'page_properties.dart';
 
+/// REF: https://developers.notion.com/reference/page-property-values#checkbox
 class CheckboxPageProperty extends PageProperty {
   CheckboxPageProperty({
     required super.id,

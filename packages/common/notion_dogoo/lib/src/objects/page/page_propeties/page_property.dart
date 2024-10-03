@@ -1,5 +1,6 @@
 part of 'page_properties.dart';
 
+/// REF: https://developers.notion.com/reference/page-property-values#type-objects
 class PageProperty {
   PageProperty({
     required this.id,
