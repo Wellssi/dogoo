@@ -4,6 +4,7 @@ part 'checkbox_page_property.dart';
 part 'page_property_key.dart';
 part 'page_property.dart';
 
+/// REF: https://developers.notion.com/reference/page-property-values#type-objects
 class PageProperties {
   static Map<String, PageProperty> fromJson(Map<String, Object> json) {
     Map<String, PageProperty> pageProperties = <String, PageProperty>{};
