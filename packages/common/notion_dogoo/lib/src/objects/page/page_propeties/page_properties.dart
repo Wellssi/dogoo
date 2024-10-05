@@ -1,6 +1,6 @@
 import 'package:notion_dogoo/src/constants/constants.dart';
 
-part 'checkbox_page_property.dart';
+part 'page_property_checkbox.dart';
 part 'page_property_key.dart';
 part 'page_property.dart';
 
