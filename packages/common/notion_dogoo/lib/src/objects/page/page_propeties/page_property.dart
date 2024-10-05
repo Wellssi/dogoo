@@ -16,6 +16,8 @@ class PageProperty {
     switch (type) {
       case PagePropertyType.checkbox:
         return PagePropertyCheckbox.fromJson(json);
+      case PagePropertyType.createdBy:
+        return PagePropertyCreatedBy.fromJson(json);
       default:
         return PageProperty(
           id: json[_id],
