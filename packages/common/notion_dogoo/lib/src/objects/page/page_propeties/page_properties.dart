@@ -4,6 +4,7 @@ import 'package:notion_dogoo/src/objects/user.dart';
 part 'page_property_checkbox.dart';
 part 'page_property_created_by.dart';
 part 'page_property_created_time.dart';
+part 'page_property_date.dart';
 part 'page_property_key.dart';
 part 'page_property.dart';
 
