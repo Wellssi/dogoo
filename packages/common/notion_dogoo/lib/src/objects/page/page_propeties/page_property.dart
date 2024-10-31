@@ -23,7 +23,7 @@ class PageProperty {
       case PagePropertyType.date:
         return DatePageProperty.fromJson(json);
       case PagePropertyType.email:
-        return PagePropertyEmail.fromJson(json);
+        return EmailPageProperty.fromJson(json);
       case PagePropertyType.files:
         return FilesPageProperty.fromJson(json);
       default:

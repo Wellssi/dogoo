@@ -1,8 +1,8 @@
 part of 'page_properties.dart';
 
 /// REF: https://developers.notion.com/reference/page-property-values#email
-class PagePropertyEmail extends PageProperty {
-  PagePropertyEmail({
+class EmailPageProperty extends PageProperty {
+  EmailPageProperty({
     required super.id,
     required this.email,
   }) : super(
@@ -11,8 +11,8 @@ class PagePropertyEmail extends PageProperty {
 
   final String email;
 
-  factory PagePropertyEmail.fromJson(Map<String, dynamic> json) {
-    return PagePropertyEmail(
+  factory EmailPageProperty.fromJson(Map<String, dynamic> json) {
+    return EmailPageProperty(
       id: json[_id],
       email: json[_email],
     );
