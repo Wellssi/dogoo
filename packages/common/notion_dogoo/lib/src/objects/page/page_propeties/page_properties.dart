@@ -1,6 +1,7 @@
 import 'package:notion_dogoo/src/constants/constants.dart';
-import 'package:notion_dogoo/src/objects/user.dart';
+import 'package:notion_dogoo/src/objects/objects.dart';
 
+part 'files_page_property.dart';
 part 'page_property_checkbox.dart';
 part 'page_property_created_by.dart';
 part 'page_property_created_time.dart';

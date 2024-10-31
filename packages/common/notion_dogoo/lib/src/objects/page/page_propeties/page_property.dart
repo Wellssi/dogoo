@@ -24,6 +24,8 @@ class PageProperty {
         return PagePropertyDate.fromJson(json);
       case PagePropertyType.email:
         return PagePropertyEmail.fromJson(json);
+      case PagePropertyType.files:
+        return FilesPageProperty.fromJson(json);
       default:
         return PageProperty(
           id: json[_id],
