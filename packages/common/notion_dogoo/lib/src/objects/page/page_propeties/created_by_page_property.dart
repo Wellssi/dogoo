@@ -1,8 +1,8 @@
 part of 'page_properties.dart';
 
 /// REF: https://developers.notion.com/reference/page-property-values#created-by
-class PagePropertyCreatedBy extends PageProperty {
-  PagePropertyCreatedBy({
+class CreatedByPageProperty extends PageProperty {
+  CreatedByPageProperty({
     required super.id,
     required this.createdBy,
   }) : super(
@@ -11,8 +11,8 @@ class PagePropertyCreatedBy extends PageProperty {
 
   final User createdBy;
 
-  factory PagePropertyCreatedBy.fromJson(Map<String, dynamic> json) {
-    return PagePropertyCreatedBy(
+  factory CreatedByPageProperty.fromJson(Map<String, dynamic> json) {
+    return CreatedByPageProperty(
       id: json[_id],
       createdBy: User.fromJson(json[_createdBy]),
     );

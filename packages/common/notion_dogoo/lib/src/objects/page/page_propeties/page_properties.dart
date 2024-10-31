@@ -2,8 +2,8 @@ import 'package:notion_dogoo/src/constants/constants.dart';
 import 'package:notion_dogoo/src/objects/objects.dart';
 
 part 'checkbox_page_property.dart';
+part 'created_by_page_property.dart';
 part 'files_page_property.dart';
-part 'page_property_created_by.dart';
 part 'page_property_created_time.dart';
 part 'page_property_date.dart';
 part 'page_property_email.dart';
