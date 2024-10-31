@@ -15,7 +15,7 @@ class PageProperty {
 
     switch (type) {
       case PagePropertyType.checkbox:
-        return PagePropertyCheckbox.fromJson(json);
+        return CheckboxPageProperty.fromJson(json);
       case PagePropertyType.createdBy:
         return PagePropertyCreatedBy.fromJson(json);
       case PagePropertyType.createdTime:

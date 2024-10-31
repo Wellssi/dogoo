@@ -1,8 +1,8 @@
 part of 'page_properties.dart';
 
 /// REF: https://developers.notion.com/reference/page-property-values#checkbox
-class PagePropertyCheckbox extends PageProperty {
-  PagePropertyCheckbox({
+class CheckboxPageProperty extends PageProperty {
+  CheckboxPageProperty({
     required super.id,
     required this.checkbox,
   }) : super(
@@ -11,8 +11,8 @@ class PagePropertyCheckbox extends PageProperty {
 
   final bool checkbox;
 
-  factory PagePropertyCheckbox.fromJson(Map<String, dynamic> json) {
-    return PagePropertyCheckbox(
+  factory CheckboxPageProperty.fromJson(Map<String, dynamic> json) {
+    return CheckboxPageProperty(
       id: json[_id],
       checkbox: json[_checkbox],
     );
