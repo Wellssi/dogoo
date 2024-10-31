@@ -3,8 +3,8 @@ import 'package:notion_dogoo/src/objects/objects.dart';
 
 part 'checkbox_page_property.dart';
 part 'created_by_page_property.dart';
+part 'created_time_page_property.dart';
 part 'files_page_property.dart';
-part 'page_property_created_time.dart';
 part 'page_property_date.dart';
 part 'page_property_email.dart';
 part 'page_property_key.dart';

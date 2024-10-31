@@ -1,8 +1,8 @@
 part of 'page_properties.dart';
 
 // REF: https://developers.notion.com/reference/page-property-values#created-time
-class PagePropertyCreatedTime extends PageProperty {
-  PagePropertyCreatedTime({
+class CreatedTimePageProperty extends PageProperty {
+  CreatedTimePageProperty({
     required super.id,
     required this.createdTime,
   }) : super(
@@ -11,8 +11,8 @@ class PagePropertyCreatedTime extends PageProperty {
 
   final DateTime createdTime;
 
-  factory PagePropertyCreatedTime.fromJson(Map<String, dynamic> json) {
-    return PagePropertyCreatedTime(
+  factory CreatedTimePageProperty.fromJson(Map<String, dynamic> json) {
+    return CreatedTimePageProperty(
       id: json[_id],
       createdTime: DateTime.parse(json[_createdTime]),
     );
