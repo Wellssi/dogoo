@@ -1,8 +1,8 @@
 part of 'page_properties.dart';
 
 /// REF: https://developers.notion.com/reference/page-property-values#date
-class PagePropertyDate extends PageProperty {
-  PagePropertyDate({
+class DatePageProperty extends PageProperty {
+  DatePageProperty({
     required super.id,
     required this.start,
     this.end,
@@ -13,8 +13,8 @@ class PagePropertyDate extends PageProperty {
   final DateTime start;
   final DateTime? end;
 
-  factory PagePropertyDate.fromJson(Map<String, dynamic> json) {
-    return PagePropertyDate(
+  factory DatePageProperty.fromJson(Map<String, dynamic> json) {
+    return DatePageProperty(
       id: json[_id],
       start: DateTime.parse(json[_start]),
       end: DateTime.parse(json[_end]),

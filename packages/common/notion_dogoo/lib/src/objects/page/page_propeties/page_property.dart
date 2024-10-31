@@ -21,7 +21,7 @@ class PageProperty {
       case PagePropertyType.createdTime:
         return CreatedTimePageProperty.fromJson(json);
       case PagePropertyType.date:
-        return PagePropertyDate.fromJson(json);
+        return DatePageProperty.fromJson(json);
       case PagePropertyType.email:
         return PagePropertyEmail.fromJson(json);
       case PagePropertyType.files:
