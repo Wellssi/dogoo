@@ -34,6 +34,7 @@ class FormulaPageProperty extends PageProperty {
     );
   }
 
+  @override
   Map<String, Object> toJson() {
     Map<String, Object> json = super.toJson();
     Map<String, Object> formulaJson = {
