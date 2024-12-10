@@ -14,3 +14,6 @@ const String _boolean = 'boolean';
 const String _date = 'date';
 const String _number = 'number';
 const String _string = 'string';
+const String _icon = 'icon';
+const String _emoji = 'emoji';
+const String _file = 'file';

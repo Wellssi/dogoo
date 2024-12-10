@@ -8,6 +8,7 @@ part 'date_page_property.dart';
 part 'email_page_property.dart';
 part 'files_page_property.dart';
 part 'formula_page_property.dart';
+part 'icon_page_property.dart';
 part 'page_property_key.dart';
 part 'page_property.dart';
 
