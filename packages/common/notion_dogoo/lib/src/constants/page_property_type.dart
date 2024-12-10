@@ -4,6 +4,7 @@ const String _createdTime = 'created_time';
 const String _date = 'date';
 const String _email = 'email';
 const String _files = 'files';
+const String _icon = 'icon';
 const String _formula = 'formula';
 const String _lastEditedBy = 'last_edited_by';
 const String _lastEditedTime = 'last_edited_time';
@@ -30,6 +31,7 @@ enum PagePropertyType {
   email(key: _email),
   files(key: _files),
   formula(key: _formula),
+  icon(key: _icon),
   lastEditedBy(key: _lastEditedBy),
   lastEditedTime(key: _lastEditedTime),
   multiSelect(key: _multiSelect),
@@ -69,6 +71,8 @@ enum PagePropertyType {
         return PagePropertyType.files;
       case _formula:
         return PagePropertyType.formula;
+      case _icon:
+        return PagePropertyType.icon;
       case _lastEditedBy:
         return PagePropertyType.lastEditedBy;
       case _lastEditedTime:
