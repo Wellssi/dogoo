@@ -18,3 +18,4 @@ const String _icon = 'icon';
 const String _emoji = 'emoji';
 const String _file = 'file';
 const String _lastEditedBy = 'last_edited_by';
+const String _lastEditedTime = 'last_edited_time';

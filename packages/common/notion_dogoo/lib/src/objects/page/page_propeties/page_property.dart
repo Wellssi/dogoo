@@ -32,6 +32,8 @@ class PageProperty {
         return IconPageProperty.fromJson(json);
       case PagePropertyType.lastEditedBy:
         return LastEditedByPageProperty.fromJson(json);
+      case PagePropertyType.lastEditedTime:
+        return LastEditedTimePageProperty.fromJson(json);
       default:
         return PageProperty(
           id: json[_id],
