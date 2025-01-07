@@ -30,6 +30,8 @@ class PageProperty {
         return FormulaPageProperty.fromJson(json);
       case PagePropertyType.icon:
         return IconPageProperty.fromJson(json);
+      case PagePropertyType.lastEditedBy:
+        return LastEditedByPageProperty.fromJson(json);
       default:
         return PageProperty(
           id: json[_id],
