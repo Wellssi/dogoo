@@ -1,7 +1,5 @@
 library notion_dogoo.objects.page;
 
-import 'package:notion_dogoo/src/objects/parents/parent.dart';
-
 import '../common/common.dart';
 import 'page_propeties/page_properties.dart';
 
