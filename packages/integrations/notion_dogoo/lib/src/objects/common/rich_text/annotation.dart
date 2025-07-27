@@ -1,7 +1,7 @@
 part of 'rich_text.dart';
 
 /// REF: https://developers.notion.com/reference/rich-text#the-annotation-object
-class Annotaion {
+class Annotation {
   final bool bold;
   final bool italic;
   final bool strikethrough;
@@ -9,7 +9,7 @@ class Annotaion {
   final bool code;
   final NotionColor color;
 
-  Annotaion({
+  Annotation({
     required this.bold,
     required this.italic,
     required this.strikethrough,
@@ -18,8 +18,8 @@ class Annotaion {
     required this.color,
   });
 
-  factory Annotaion.fromJson(Map<String, dynamic> json) {
-    return Annotaion(
+  factory Annotation.fromJson(Map<String, dynamic> json) {
+    return Annotation(
       bold: json[_bold],
       italic: json[_italic],
       strikethrough: json[_strikethrough],

@@ -2,7 +2,7 @@ part of 'rich_text.dart';
 
 class TextRichText extends RichText {
   TextRichText({
-    required super.annotaions,
+    required super.annotations,
     required super.plainText,
     required this.content,
     this.link,
@@ -16,7 +16,7 @@ class TextRichText extends RichText {
 
   factory TextRichText.fromJson(Map<String, dynamic> json) {
     return TextRichText(
-      annotaions: Annotaion.fromJson(json[_annotations]),
+      annotations: Annotation.fromJson(json[_annotations]),
       plainText: json[_plainText],
       content: json[_content],
       // TODO(Just-gomin): Implements [Link.fromJson] constructor.
