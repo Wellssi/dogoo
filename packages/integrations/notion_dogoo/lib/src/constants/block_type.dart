@@ -62,7 +62,7 @@ enum BlockType {
   template(key: _template),
   toDo(key: _toDo),
   toggle(key: _toggle),
-  unsupporteed(key: _unsupported),
+  unsupported(key: _unsupported),
   video(key: _video),
   ;
 
@@ -135,7 +135,7 @@ enum BlockType {
       case _toggle:
         return BlockType.toggle;
       case _unsupported:
-        return BlockType.unsupporteed;
+        return BlockType.unsupported;
       case _video:
         return BlockType.video;
       default:
