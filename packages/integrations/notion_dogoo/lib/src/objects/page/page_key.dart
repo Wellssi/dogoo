@@ -1,6 +1,5 @@
 part of 'page.dart';
 
-const String _object = 'object';
 const String _id = 'id';
 const String _createdTime = 'created_time';
 const String _lastEditedTime = 'last_edited_time';

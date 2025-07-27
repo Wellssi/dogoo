@@ -1,17 +1,16 @@
 library notion_dogoo.objects.page;
 
-import 'package:notion_dogoo/src/objects/common/file.dart';
 import 'package:notion_dogoo/src/objects/parents/parent.dart';
-import 'package:notion_dogoo/src/objects/common/user.dart';
 
+import '../common/common.dart';
 import 'page_propeties/page_properties.dart';
 
 part 'page_key.dart';
 
 /// REF: https://developers.notion.com/reference/page
-class Page {
+class Page extends NotionObject {
   Page({
-    required this.id,
+    required super.id,
     required this.createdTime,
     required this.createdBy,
     required this.lastEditedTime,
@@ -24,9 +23,8 @@ class Page {
     required this.parent,
     required this.url,
     required this.publicUrl,
-  });
+  }) : super(object: 'page');
 
-  final String id;
   final DateTime createdTime;
   final User createdBy;
   final DateTime lastEditedTime;
@@ -40,8 +38,6 @@ class Page {
   final Parent parent;
   final String url;
   final String publicUrl;
-
-  String get object => 'page';
 
   factory Page.fromJson(Map<String, dynamic> json) {
     return Page(
@@ -61,10 +57,10 @@ class Page {
     );
   }
 
+  @override
   Map<String, dynamic> toJson() {
-    return {
-      _object: object,
-      _id: id,
+    final Map<String, dynamic> json = super.toJson();
+    json.addAll({
       _createdTime: createdTime.toIso8601String(),
       _createdBy: createdBy.toJson(),
       _lastEditedTime: lastEditedTime.toIso8601String(),
@@ -77,6 +73,7 @@ class Page {
       _parent: parent.toJson(),
       _url: url,
       _publicUrl: publicUrl,
-    };
+    });
+    return json;
   }
 }
