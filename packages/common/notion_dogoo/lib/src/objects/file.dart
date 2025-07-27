@@ -4,6 +4,7 @@ const _type = 'type';
 const _url = 'url';
 const _expiryTime = 'expiry_time';
 
+/// REF: https://developers.notion.com/reference/file-object
 class File {
   const File({
     required this.type,
