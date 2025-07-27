@@ -1,8 +1,8 @@
 library notion_dogoo.objects.page;
 
-import 'package:notion_dogoo/src/objects/file.dart';
+import 'package:notion_dogoo/src/objects/common/file.dart';
 import 'package:notion_dogoo/src/objects/parents/parent.dart';
-import 'package:notion_dogoo/src/objects/user.dart';
+import 'package:notion_dogoo/src/objects/common/user.dart';
 
 import 'page_propeties/page_properties.dart';
 
