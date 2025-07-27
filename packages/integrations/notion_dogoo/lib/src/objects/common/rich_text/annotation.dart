@@ -7,7 +7,7 @@ class Annotaion {
   final bool strikethrough;
   final bool underline;
   final bool code;
-  final Color color;
+  final NotionColor color;
 
   Annotaion({
     required this.bold,

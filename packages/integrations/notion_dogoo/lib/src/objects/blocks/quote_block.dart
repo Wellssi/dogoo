@@ -20,7 +20,7 @@ class QuoteBlock extends Block {
         );
 
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory QuoteBlock.fromJson(Map<String, dynamic> json) {
@@ -35,7 +35,7 @@ class QuoteBlock extends Block {
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.quote.key][_richText],
-      color: Color.fromKey(json[BlockType.quote.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.quote.key][_color]),
       children:
           (json[BlockType.quote.key][_children] as List<Map<String, dynamic>>)
               .map((e) => Block.fromJson(json))

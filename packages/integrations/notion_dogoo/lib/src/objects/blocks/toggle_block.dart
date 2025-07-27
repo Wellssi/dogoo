@@ -13,7 +13,7 @@ class ToggleBlock extends Block {
     required super.archived,
     required super.inTrash,
     required this.richText,
-    this.color = Color.defaultColor,
+    this.color = NotionColor.defaultColor,
     required this.children,
   }) : super(
           type: BlockType.toggle,
@@ -21,7 +21,7 @@ class ToggleBlock extends Block {
 
   // TODO(Just-gomin): Implement this. array of rich text objects.
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory ToggleBlock.fromJson(Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class ToggleBlock extends Block {
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.toDo.key][_richText],
-      color: Color.fromKey(json[BlockType.toDo.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.toDo.key][_color]),
       children: json[_children]
           .map<Block>(
             (child) => Block.fromJson(child),

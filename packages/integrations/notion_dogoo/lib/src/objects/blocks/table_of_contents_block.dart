@@ -12,12 +12,12 @@ class TableOfContentsBlock extends Block {
     required super.hasChildren,
     required super.archived,
     required super.inTrash,
-    this.color = Color.defaultColor,
+    this.color = NotionColor.defaultColor,
   }) : super(
           type: BlockType.tableOfContents,
         );
 
-  final Color color;
+  final NotionColor color;
 
   factory TableOfContentsBlock.fromJson(Map<String, dynamic> json) {
     return TableOfContentsBlock(
@@ -30,7 +30,7 @@ class TableOfContentsBlock extends Block {
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      color: Color.fromKey(json[BlockType.tableOfContents][_color]),
+      color: NotionColor.fromKey(json[BlockType.tableOfContents][_color]),
     );
   }
 

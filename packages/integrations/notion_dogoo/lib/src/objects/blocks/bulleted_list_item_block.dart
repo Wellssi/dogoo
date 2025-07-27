@@ -20,7 +20,7 @@ class BulletedListItemBlock extends Block {
 
   // TODO(Just-gomin): Implement this. array of rich test.
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory BulletedListItemBlock.fromJson(Map<String, dynamic> json) {
@@ -35,7 +35,7 @@ class BulletedListItemBlock extends Block {
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.bulletedListItem.key][_richText],
-      color: Color.fromKey(json[BlockType.bulletedListItem.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.bulletedListItem.key][_color]),
       children: json[BlockType.bulletedListItem.key][_children],
     );
   }

@@ -18,7 +18,7 @@ const _purpleBackground = 'purple_background';
 const _red = 'red';
 const _redBackground = 'red_background';
 
-enum Color {
+enum NotionColor {
   blue(key: _blue),
   blueBackground(key: _blueBackground),
   brown(key: _brown),
@@ -39,7 +39,7 @@ enum Color {
   red(key: _red),
   redBackground(key: _redBackground);
 
-  const Color({
+  const NotionColor({
     required this.key,
   });
   final String key;
@@ -47,43 +47,43 @@ enum Color {
   static fromKey(String key) {
     switch (key) {
       case _blue:
-        return Color.blue;
+        return NotionColor.blue;
       case _blueBackground:
-        return Color.blueBackground;
+        return NotionColor.blueBackground;
       case _brown:
-        return Color.brown;
+        return NotionColor.brown;
       case _brownBackground:
-        return Color.brownBackground;
+        return NotionColor.brownBackground;
       case _default:
-        return Color.defaultColor;
+        return NotionColor.defaultColor;
       case _gray:
-        return Color.gray;
+        return NotionColor.gray;
       case _grayBackground:
-        return Color.grayBackground;
+        return NotionColor.grayBackground;
       case _green:
-        return Color.green;
+        return NotionColor.green;
       case _greenBackground:
-        return Color.greenBackground;
+        return NotionColor.greenBackground;
       case _orange:
-        return Color.orange;
+        return NotionColor.orange;
       case _orangeBackground:
-        return Color.orangeBackground;
+        return NotionColor.orangeBackground;
       case _yellow:
-        return Color.yellow;
+        return NotionColor.yellow;
       case _yellowBackground:
-        return Color.yellowBackground;
+        return NotionColor.yellowBackground;
       case _pink:
-        return Color.pink;
+        return NotionColor.pink;
       case _pinkBackground:
-        return Color.pinkBackground;
+        return NotionColor.pinkBackground;
       case _purple:
-        return Color.purple;
+        return NotionColor.purple;
       case _purpleBackground:
-        return Color.purpleBackground;
+        return NotionColor.purpleBackground;
       case _red:
-        return Color.red;
+        return NotionColor.red;
       case _redBackground:
-        return Color.redBackground;
+        return NotionColor.redBackground;
       default:
         throw Exception('Invalid color key: $key');
     }

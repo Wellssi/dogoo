@@ -20,7 +20,7 @@ class ParagraphBlock extends Block {
 
   // TODO(Just-gomin): Implement this. array of rich text objects.
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory ParagraphBlock.fromJson(Map<String, dynamic> json) {
@@ -35,7 +35,7 @@ class ParagraphBlock extends Block {
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.paragraph.key][_richText],
-      color: Color.fromKey(json[BlockType.paragraph.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.paragraph.key][_color]),
       children: (json[BlockType.paragraph.key][_children] as List)
           .map((e) => Block.fromJson(e))
           .toList(),

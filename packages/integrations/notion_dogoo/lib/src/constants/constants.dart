@@ -1,9 +1,9 @@
 export 'block_type.dart';
 export 'code_language.dart';
-export 'color.dart';
 export 'file_type.dart';
 export 'mention_date_type.dart';
 export 'mention_type.dart';
+export 'notion_color.dart';
 export 'page_property_type.dart';
 export 'response_error_code.dart';
 export 'rich_text_type.dart';

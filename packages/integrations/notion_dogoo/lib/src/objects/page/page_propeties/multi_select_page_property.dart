@@ -38,13 +38,13 @@ class MultiSelectPagePropertyValue {
     required this.name,
   });
 
-  final Color color;
+  final NotionColor color;
   final String id;
   final String name;
 
   factory MultiSelectPagePropertyValue.fromJson(Map<String, dynamic> json) {
     return MultiSelectPagePropertyValue(
-      color: Color.fromKey(json[_color]),
+      color: NotionColor.fromKey(json[_color]),
       id: json[_id],
       name: json[_name],
     );

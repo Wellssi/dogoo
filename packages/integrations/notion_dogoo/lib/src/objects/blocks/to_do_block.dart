@@ -14,7 +14,7 @@ class ToDoBlock extends Block {
     required super.inTrash,
     required this.richText,
     this.checked,
-    this.color = Color.defaultColor,
+    this.color = NotionColor.defaultColor,
     required this.children,
   }) : super(
           type: BlockType.toDo,
@@ -23,7 +23,7 @@ class ToDoBlock extends Block {
   // TODO(Just-gomin): Implement this. array of rich text objects.
   final List<Object> richText;
   final bool? checked;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory ToDoBlock.fromJson(Map<String, dynamic> json) {
@@ -39,7 +39,7 @@ class ToDoBlock extends Block {
       inTrash: json[_inTrash],
       richText: json[BlockType.toDo.key][_richText],
       checked: json[BlockType.toDo.key][_checked],
-      color: Color.fromKey(json[BlockType.toDo.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.toDo.key][_color]),
       children: json[_children]
           .map<Block>(
             (child) => Block.fromJson(child),

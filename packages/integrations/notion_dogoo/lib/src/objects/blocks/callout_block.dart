@@ -23,7 +23,7 @@ class CalloutBlock extends Block {
   final List<Object> richText;
   // TODO(Just-gomin): Implement this. An emoji or file.
   final Object icon;
-  final Color color;
+  final NotionColor color;
 
   factory CalloutBlock.fromJson(Map<String, dynamic> json) {
     return CalloutBlock(
@@ -38,7 +38,7 @@ class CalloutBlock extends Block {
       inTrash: json[_inTrash],
       richText: json[BlockType.callout.key][_richText],
       icon: json[BlockType.callout.key][_icon],
-      color: Color.fromKey(json[BlockType.callout.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.callout.key][_color]),
     );
   }
 

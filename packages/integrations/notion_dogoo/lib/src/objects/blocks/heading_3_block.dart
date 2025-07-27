@@ -21,7 +21,7 @@ class Heading3Block extends Block {
 
   // TODO(Just-gomin): Implement this. array of rich text objects.
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final bool isToggleable;
 
   factory Heading3Block.fromJson(Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class Heading3Block extends Block {
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.heading3.key][_richText],
-      color: Color.fromKey(json[BlockType.heading3.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.heading3.key][_color]),
       isToggleable: json[BlockType.heading3.key][_isToggleable],
     );
   }

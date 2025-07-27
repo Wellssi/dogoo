@@ -21,7 +21,7 @@ class NumberedListItemBlock extends Block {
 
   // TODO(Just-gomin): Implement this. array of rich text objects.
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory NumberedListItemBlock.fromJson(Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class NumberedListItemBlock extends Block {
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.numberedListItem.key][_richText],
-      color: Color.fromKey(json[BlockType.numberedListItem.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.numberedListItem.key][_color]),
       children: (json[BlockType.numberedListItem.key][_children] as List)
           .map((e) => Block.fromJson(e))
           .toList(),
