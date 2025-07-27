@@ -14,15 +14,15 @@ class VerificationPageProperty extends PageProperty {
   factory VerificationPageProperty.fromJson(Map<String, dynamic> json) {
     return VerificationPageProperty(
       id: json[_id],
-      verification: json[_verification] != null 
-          ? VerificationValue.fromJson(json[_verification]) 
+      verification: json[_verification] != null
+          ? VerificationValue.fromJson(json[_verification])
           : null,
     );
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     if (verification != null) {
       json.addAll({
         _verification: verification!.toJson(),
@@ -47,14 +47,14 @@ class VerificationValue {
     return VerificationValue(
       state: json['state'],
       date: json[_date] != null ? DateTime.parse(json[_date]) : null,
-      verifiedBy: json['verified_by'] != null 
-          ? User.fromJson(json['verified_by']) 
+      verifiedBy: json['verified_by'] != null
+          ? User.fromJson(json['verified_by'])
           : null,
     );
   }
 
-  Map<String, Object> toJson() {
-    Map<String, Object> json = {
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = {
       'state': state,
     };
     if (date != null) json[_date] = date!.toIso8601String();

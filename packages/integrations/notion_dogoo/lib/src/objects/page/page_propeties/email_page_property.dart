@@ -19,8 +19,8 @@ class EmailPageProperty extends PageProperty {
   }
 
   @override
-  Map<String, Object> toJson() {
-    final Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> json = super.toJson();
     json.addAll({
       _email: email,
     });

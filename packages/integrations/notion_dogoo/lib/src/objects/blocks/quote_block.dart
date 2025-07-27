@@ -7,7 +7,7 @@ class QuoteBlock extends Block {
     required super.parent,
     required super.createdTime,
     required super.lastEditedTime,
-    required super.creattedBy,
+    required super.createdBy,
     required super.lastEditedBy,
     required super.hasChildren,
     required super.archived,
@@ -20,7 +20,7 @@ class QuoteBlock extends Block {
         );
 
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory QuoteBlock.fromJson(Map<String, dynamic> json) {
@@ -29,13 +29,13 @@ class QuoteBlock extends Block {
       parent: Parent.fromJson(json[_parent]),
       createdTime: DateTime.parse(json[_createdTime]),
       lastEditedTime: DateTime.parse(json[_lastEditedTime]),
-      creattedBy: User.fromJson(json[_createdBy]),
+      createdBy: User.fromJson(json[_createdBy]),
       lastEditedBy: User.fromJson(json[_lastEditedBy]),
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.quote.key][_richText],
-      color: Color.fromKey(json[BlockType.quote.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.quote.key][_color]),
       children:
           (json[BlockType.quote.key][_children] as List<Map<String, dynamic>>)
               .map((e) => Block.fromJson(json))
@@ -44,8 +44,8 @@ class QuoteBlock extends Block {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       BlockType.quote.key: {
         _richText: richText,

@@ -7,7 +7,7 @@ class BookmarkBlock extends Block {
     required super.parent,
     required super.createdTime,
     required super.lastEditedTime,
-    required super.creattedBy,
+    required super.createdBy,
     required super.lastEditedBy,
     required super.hasChildren,
     required super.archived,
@@ -28,7 +28,7 @@ class BookmarkBlock extends Block {
       parent: Parent.fromJson(json[_parent]),
       createdTime: DateTime.parse(json[_createdTime]),
       lastEditedTime: DateTime.parse(json[_lastEditedTime]),
-      creattedBy: User.fromJson(json[_createdBy]),
+      createdBy: User.fromJson(json[_createdBy]),
       lastEditedBy: User.fromJson(json[_lastEditedBy]),
       hasChildren: json[_hasChildren],
       archived: json[_archived],
@@ -39,8 +39,8 @@ class BookmarkBlock extends Block {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       BlockType.bookmark.key: {
         _caption: caption,

@@ -7,13 +7,13 @@ class ToggleBlock extends Block {
     required super.parent,
     required super.createdTime,
     required super.lastEditedTime,
-    required super.creattedBy,
+    required super.createdBy,
     required super.lastEditedBy,
     required super.hasChildren,
     required super.archived,
     required super.inTrash,
     required this.richText,
-    this.color = Color.defaultColor,
+    this.color = NotionColor.defaultColor,
     required this.children,
   }) : super(
           type: BlockType.toggle,
@@ -21,7 +21,7 @@ class ToggleBlock extends Block {
 
   // TODO(Just-gomin): Implement this. array of rich text objects.
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory ToggleBlock.fromJson(Map<String, dynamic> json) {
@@ -30,13 +30,13 @@ class ToggleBlock extends Block {
       parent: Parent.fromJson(json[_parent]),
       createdTime: DateTime.parse(json[_createdTime]),
       lastEditedTime: DateTime.parse(json[_lastEditedTime]),
-      creattedBy: User.fromJson(json[_createdBy]),
+      createdBy: User.fromJson(json[_createdBy]),
       lastEditedBy: User.fromJson(json[_lastEditedBy]),
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.toDo.key][_richText],
-      color: Color.fromKey(json[BlockType.toDo.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.toDo.key][_color]),
       children: json[_children]
           .map<Block>(
             (child) => Block.fromJson(child),
@@ -46,8 +46,8 @@ class ToggleBlock extends Block {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       BlockType.toDo.key: {
         _richText: richText,

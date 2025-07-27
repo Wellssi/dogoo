@@ -3,7 +3,7 @@ const String _breadcrumb = 'breadcrumb';
 const String _bulletedListItem = 'bulleted_list_item';
 const String _callout = 'callout';
 const String _childDatabase = 'child_database';
-const String _childPage = 'childPage';
+const String _childPage = 'child_page';
 const String _code = 'code';
 const String _column = 'column';
 const String _columnList = 'column_list';
@@ -11,12 +11,12 @@ const String _divider = 'divider';
 const String _embed = 'embed';
 const String _equation = 'equation';
 const String _file = 'file';
-const String _heading1 = 'heading1';
-const String _heading2 = 'heading2';
-const String _heading3 = 'heading3';
+const String _heading1 = 'heading_1';
+const String _heading2 = 'heading_2';
+const String _heading3 = 'heading_3';
 const String _image = 'image';
 const String _linkPreview = 'link_preview';
-const String _lintToPage = 'lint_to_page';
+const String _mention = 'mention';
 const String _numberedListItem = 'numbered_list_item';
 const String _paragraph = 'paragraph';
 const String _pdf = 'pdf';
@@ -28,7 +28,7 @@ const String _tableRow = 'table_row';
 const String _template = 'template';
 const String _toDo = 'to_do';
 const String _toggle = 'toggle';
-const String _unsupporteed = 'unsupporteed';
+const String _unsupported = 'unsupported';
 const String _video = 'video';
 
 enum BlockType {
@@ -50,7 +50,7 @@ enum BlockType {
   heading3(key: _heading3),
   image(key: _image),
   linkPreview(key: _linkPreview),
-  lintToPage(key: _lintToPage),
+  mention(key: _mention),
   numberedListItem(key: _numberedListItem),
   paragraph(key: _paragraph),
   pdf(key: _pdf),
@@ -62,7 +62,7 @@ enum BlockType {
   template(key: _template),
   toDo(key: _toDo),
   toggle(key: _toggle),
-  unsupporteed(key: _unsupporteed),
+  unsupported(key: _unsupported),
   video(key: _video),
   ;
 
@@ -110,8 +110,8 @@ enum BlockType {
         return BlockType.image;
       case _linkPreview:
         return BlockType.linkPreview;
-      case _lintToPage:
-        return BlockType.lintToPage;
+      case _mention:
+        return BlockType.mention;
       case _numberedListItem:
         return BlockType.numberedListItem;
       case _paragraph:
@@ -134,8 +134,8 @@ enum BlockType {
         return BlockType.toDo;
       case _toggle:
         return BlockType.toggle;
-      case _unsupporteed:
-        return BlockType.unsupporteed;
+      case _unsupported:
+        return BlockType.unsupported;
       case _video:
         return BlockType.video;
       default:

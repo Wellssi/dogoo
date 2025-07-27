@@ -6,7 +6,7 @@ class ParagraphBlock extends Block {
     required super.parent,
     required super.createdTime,
     required super.lastEditedTime,
-    required super.creattedBy,
+    required super.createdBy,
     required super.lastEditedBy,
     required super.hasChildren,
     required super.archived,
@@ -20,7 +20,7 @@ class ParagraphBlock extends Block {
 
   // TODO(Just-gomin): Implement this. array of rich text objects.
   final List<Object> richText;
-  final Color color;
+  final NotionColor color;
   final List<Block> children;
 
   factory ParagraphBlock.fromJson(Map<String, dynamic> json) {
@@ -29,13 +29,13 @@ class ParagraphBlock extends Block {
       parent: Parent.fromJson(json[_parent]),
       createdTime: DateTime.parse(json[_createdTime]),
       lastEditedTime: DateTime.parse(json[_lastEditedTime]),
-      creattedBy: User.fromJson(json[_createdBy]),
+      createdBy: User.fromJson(json[_createdBy]),
       lastEditedBy: User.fromJson(json[_lastEditedBy]),
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.paragraph.key][_richText],
-      color: Color.fromKey(json[BlockType.paragraph.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.paragraph.key][_color]),
       children: (json[BlockType.paragraph.key][_children] as List)
           .map((e) => Block.fromJson(e))
           .toList(),
@@ -43,8 +43,8 @@ class ParagraphBlock extends Block {
   }
 
   @override
-  Map<String, Object> toJson() {
-    final Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> json = super.toJson();
 
     json.addAll({
       BlockType.paragraph.key: {

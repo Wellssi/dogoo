@@ -35,9 +35,9 @@ class IconPageProperty extends PageProperty {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
-    Map<String, Object> iconJson = {_type: iconType};
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
+    Map<String, dynamic> iconJson = {_type: iconType};
     if (iconType == _emoji) {
       iconJson.addAll({
         _emoji: emoji!,

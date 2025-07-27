@@ -11,13 +11,13 @@ part 'text_rich_text.dart';
 /// REF: https://developers.notion.com/reference/rich-text
 class RichText {
   final RichTextType type;
-  final Annotaion annotaions;
+  final Annotation annotations;
   final String plainText;
   final String? href;
 
   RichText({
     required this.type,
-    required this.annotaions,
+    required this.annotations,
     required this.plainText,
     this.href,
   });
@@ -25,17 +25,17 @@ class RichText {
   factory RichText.fromJson(Map<String, dynamic> json) {
     return RichText(
       type: RichTextType.fromKey(json[_type]),
-      annotaions: Annotaion.fromJson(json[_annotations]),
+      annotations: Annotation.fromJson(json[_annotations]),
       plainText: json[_plainText],
       href: json[_href],
     );
   }
 
-  Map<String, Object> toJson() {
-    Map<String, Object> json = {
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = {
       _type: type.key,
       type.key: {
-        _annotations: annotaions,
+        _annotations: annotations,
         _plainText: plainText,
         if (href != null) _href: href,
       },

@@ -9,7 +9,7 @@ class MentionBlock extends Block {
     required super.type,
     required super.createdTime,
     required super.lastEditedTime,
-    required super.creattedBy,
+    required super.createdBy,
     required super.lastEditedBy,
     required super.hasChildren,
     required super.archived,

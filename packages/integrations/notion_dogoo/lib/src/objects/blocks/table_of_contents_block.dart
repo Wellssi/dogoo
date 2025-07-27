@@ -7,17 +7,17 @@ class TableOfContentsBlock extends Block {
     required super.parent,
     required super.createdTime,
     required super.lastEditedTime,
-    required super.creattedBy,
+    required super.createdBy,
     required super.lastEditedBy,
     required super.hasChildren,
     required super.archived,
     required super.inTrash,
-    this.color = Color.defaultColor,
+    this.color = NotionColor.defaultColor,
   }) : super(
           type: BlockType.tableOfContents,
         );
 
-  final Color color;
+  final NotionColor color;
 
   factory TableOfContentsBlock.fromJson(Map<String, dynamic> json) {
     return TableOfContentsBlock(
@@ -25,18 +25,18 @@ class TableOfContentsBlock extends Block {
       parent: Parent.fromJson(json[_parent]),
       createdTime: DateTime.parse(json[_createdTime]),
       lastEditedTime: DateTime.parse(json[_lastEditedTime]),
-      creattedBy: User.fromJson(json[_createdBy]),
+      createdBy: User.fromJson(json[_createdBy]),
       lastEditedBy: User.fromJson(json[_lastEditedBy]),
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
-      color: Color.fromKey(json[BlockType.tableOfContents][_color]),
+      color: NotionColor.fromKey(json[BlockType.tableOfContents][_color]),
     );
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       BlockType.tableOfContents.key: {
         _color: color.key,

@@ -36,31 +36,29 @@ part 'toggle_block.dart';
 part 'video_block.dart';
 
 /// REF: https://developers.notion.com/reference/block
-class Block {
+class Block extends NotionObject {
   const Block({
-    required this.id,
+    required super.id,
     required this.parent,
     required this.type,
     required this.createdTime,
     required this.lastEditedTime,
-    required this.creattedBy,
+    required this.createdBy,
     required this.lastEditedBy,
     required this.hasChildren,
     required this.archived,
     required this.inTrash,
-  });
-  final String id;
+  }) : super(object: 'block');
+
   final Parent parent;
   final BlockType type;
   final DateTime createdTime;
   final DateTime lastEditedTime;
-  final User creattedBy;
+  final User createdBy;
   final User lastEditedBy;
   final bool archived;
   final bool inTrash;
   final bool hasChildren;
-
-  String get object => 'block';
 
   // TODO(Just-gomin): Return proper Block type objects.
   factory Block.fromJson(Map<String, dynamic> json) {
@@ -70,7 +68,7 @@ class Block {
       type: BlockType.fromKey(json[_type]),
       createdTime: DateTime.parse(json[_createdTime]),
       lastEditedTime: DateTime.parse(json[_lastEditedTime]),
-      creattedBy: User.fromJson(json[_createdBy]),
+      createdBy: User.fromJson(json[_createdBy]),
       lastEditedBy: User.fromJson(json[_lastEditedBy]),
       hasChildren: json[_hasChildren],
       archived: json[_archived],
@@ -78,19 +76,20 @@ class Block {
     );
   }
 
-  Map<String, Object> toJson() {
-    return {
-      _object: object,
-      _id: id,
+  @override
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> json = super.toJson();
+    json.addAll({
       _parent: parent.toJson(),
       _type: type.key,
       _createdTime: createdTime.toIso8601String(),
       _lastEditedTime: lastEditedTime.toIso8601String(),
-      _createdBy: creattedBy.toJson(),
+      _createdBy: createdBy.toJson(),
       _lastEditedBy: lastEditedBy.toJson(),
       _hasChildren: hasChildren,
       _archived: archived,
       _inTrash: inTrash,
-    };
+    });
+    return json;
   }
 }

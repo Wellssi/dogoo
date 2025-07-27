@@ -19,8 +19,8 @@ class PhoneNumberPageProperty extends PageProperty {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     if (phoneNumber != null) {
       json.addAll({
         _phoneNumber: phoneNumber!,

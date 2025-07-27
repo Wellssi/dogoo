@@ -7,7 +7,7 @@ class CalloutBlock extends Block {
     required super.parent,
     required super.createdTime,
     required super.lastEditedTime,
-    required super.creattedBy,
+    required super.createdBy,
     required super.lastEditedBy,
     required super.hasChildren,
     required super.archived,
@@ -23,7 +23,7 @@ class CalloutBlock extends Block {
   final List<Object> richText;
   // TODO(Just-gomin): Implement this. An emoji or file.
   final Object icon;
-  final Color color;
+  final NotionColor color;
 
   factory CalloutBlock.fromJson(Map<String, dynamic> json) {
     return CalloutBlock(
@@ -31,20 +31,20 @@ class CalloutBlock extends Block {
       parent: Parent.fromJson(json[_parent]),
       createdTime: DateTime.parse(json[_createdTime]),
       lastEditedTime: DateTime.parse(json[_lastEditedTime]),
-      creattedBy: User.fromJson(json[_createdBy]),
+      createdBy: User.fromJson(json[_createdBy]),
       lastEditedBy: User.fromJson(json[_lastEditedBy]),
       hasChildren: json[_hasChildren],
       archived: json[_archived],
       inTrash: json[_inTrash],
       richText: json[BlockType.callout.key][_richText],
       icon: json[BlockType.callout.key][_icon],
-      color: Color.fromKey(json[BlockType.callout.key][_color]),
+      color: NotionColor.fromKey(json[BlockType.callout.key][_color]),
     );
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       type.key: {
         BlockType.callout.key: richText,

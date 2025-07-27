@@ -3,7 +3,7 @@ part of 'rich_text.dart';
 /// REF: https://developers.notion.com/reference/rich-text#mention
 class MentionRichText extends RichText {
   MentionRichText({
-    required super.annotaions,
+    required super.annotations,
     required super.plainText,
     super.href,
     required this.object,
@@ -14,8 +14,8 @@ class MentionRichText extends RichText {
   final MentionTypeObject object;
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       _mention: object.toJson(),
     });
@@ -25,7 +25,7 @@ class MentionRichText extends RichText {
 
   factory MentionRichText.fromJson(Map<String, dynamic> json) {
     return MentionRichText(
-      annotaions: json[_annotations],
+      annotations: json[_annotations],
       plainText: json[_plainText],
       href: json[_href],
       object: MentionTypeObject.fromJson(json[_mention]),

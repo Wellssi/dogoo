@@ -14,15 +14,14 @@ class StatusPageProperty extends PageProperty {
   factory StatusPageProperty.fromJson(Map<String, dynamic> json) {
     return StatusPageProperty(
       id: json[_id],
-      status: json[_status] != null 
-          ? StatusOption.fromJson(json[_status]) 
-          : null,
+      status:
+          json[_status] != null ? StatusOption.fromJson(json[_status]) : null,
     );
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     if (status != null) {
       json.addAll({
         _status: status!.toJson(),
@@ -51,7 +50,7 @@ class StatusOption {
     );
   }
 
-  Map<String, Object> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       _id: id,
       _name: name,

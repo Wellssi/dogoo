@@ -63,7 +63,7 @@ class PageProperty {
     }
   }
 
-  Map<String, Object> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       _id: id,
       _type: type.key,
