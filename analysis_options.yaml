@@ -1,59 +1,33 @@
-# Origin analysis_options: https://gist.github.com/rydmike/fdb53ddd933c37d20e6f3188a936cd4c
+# Ref: https://dart.dev/tools/linter-rules/all
+include: all_linter_rules.yaml
 
-# 포함시킬 Lint Rule
-include: all_lint_rules.yaml
-
-# Dart Analyzer 수행시 아래의 규칙을 적용
 analyzer:
-  # 자동 생성 파일들 제외
   exclude:
-    - "**/*.g.dart"
-    # - "**/*.freezed.dart"
-    # - "test/.test_coverage.dart"
-    # - "bin/cache/**"
-    # - "lib/generated_plugin_registrant.dart"
-
+    - '**/*.freezed.dart'
+    - '**/*.g.dart'
   language:
     strict-casts: true
     strict-inference: true
     strict-raw-types: true
-
   errors:
+    deprecated_member_use_from_same_package: ignore
     included_file_warning: ignore
     missing_required_param: error
     missing_return: error
-    record_literal_one_positional_no_trailing_comma: error
-    collection_methods_unrelated_type: warning
-    unrelated_type_equality_checks: warning
-    deprecated_member_use_from_same_package: ignore
     parameter_assignments: warning
-    todo: info
+    todo: ignore
 
 linter:
   rules:
-    always_put_control_body_on_new_line: false
     always_put_required_named_parameters_first: false
-    always_use_package_imports: false
     avoid_annotating_with_dynamic: false
-    avoid_catches_without_on_clauses: false
     avoid_classes_with_only_static_members: false
-    avoid_final_parameters: false
-    avoid_positional_boolean_parameters: false
-    avoid_redundant_argument_values: false
-    avoid_types_on_closure_parameters: false
     cascade_invocations: false
-    close_sinks: false
-    deprecated_member_use_from_same_package: false
-    diagnostic_describe_all_properties: false
-    do_not_use_environment: false
-    matching_super_parameters: false
-    omit_local_variable_types: false
-    prefer_constructors_over_static_methods: false
+    comment_references: false
+    library_private_types_in_public_api: false
+    omit_obvious_property_types: false # make cleary declare the type
+    one_member_abstracts: false
     prefer_double_quotes: false
     prefer_expression_function_bodies: false
-    prefer_final_parameters: false
-    prefer_int_literals: false
-    require_trailing_commas: false
-    sort_constructors_first: false
+    prefer_final_parameters: false # make parameter immutable
     unnecessary_final: false
-    use_decorated_box: false
