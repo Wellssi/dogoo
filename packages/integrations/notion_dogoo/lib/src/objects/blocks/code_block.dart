@@ -44,8 +44,8 @@ class CodeBlock extends Block {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       BlockType.code.key: {
         _caption: caption,

@@ -43,8 +43,8 @@ class ParagraphBlock extends Block {
   }
 
   @override
-  Map<String, Object> toJson() {
-    final Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> json = super.toJson();
 
     json.addAll({
       BlockType.paragraph.key: {

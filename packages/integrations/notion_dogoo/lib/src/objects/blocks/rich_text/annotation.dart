@@ -29,7 +29,7 @@ class Annotaion {
     );
   }
 
-  Map<String, Object> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       _bold: bold,
       _italic: italic,

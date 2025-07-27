@@ -19,8 +19,8 @@ class UniqueIdPageProperty extends PageProperty {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       _uniqueId: uniqueId.toJson(),
     });
@@ -44,8 +44,8 @@ class UniqueIdValue {
     );
   }
 
-  Map<String, Object> toJson() {
-    Map<String, Object> json = {
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = {
       _number: number,
     };
     if (prefix != null) json[_prefix] = prefix!;

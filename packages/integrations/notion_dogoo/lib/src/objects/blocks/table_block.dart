@@ -41,8 +41,8 @@ class TableBlock extends Block {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json[BlockType.table.key] = {
       _tableWidth: tableWidth,
       _hasColumnHeader: hasColumnHeader,

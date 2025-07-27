@@ -29,7 +29,7 @@ part 'verification_page_property.dart';
 
 /// REF: https://developers.notion.com/reference/page-property-values#type-objects
 class PageProperties {
-  static Map<String, PageProperty> fromJson(Map<String, Object> json) {
+  static Map<String, PageProperty> fromJson(Map<String, dynamic> json) {
     Map<String, PageProperty> pageProperties = <String, PageProperty>{};
     for (final String key in json.keys) {
       pageProperties[key] = PageProperty.fromJson(
@@ -39,10 +39,10 @@ class PageProperties {
     return pageProperties;
   }
 
-  static Map<String, Object> toJson(
+  static Map<String, dynamic> toJson(
     Map<String, PageProperty> pageProperties,
   ) {
-    Map<String, Object> json = <String, Object>{};
+    Map<String, dynamic> json = <String, Object>{};
     for (final String key in pageProperties.keys) {
       json[key] = pageProperties[key]!.toJson();
     }

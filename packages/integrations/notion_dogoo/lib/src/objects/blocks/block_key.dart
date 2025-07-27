@@ -1,6 +1,5 @@
 part of 'block.dart';
 
-const String _object = 'object';
 const String _id = 'id';
 const String _parent = 'parent';
 const String _type = 'type';

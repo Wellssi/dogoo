@@ -31,8 +31,8 @@ class RichText {
     );
   }
 
-  Map<String, Object> toJson() {
-    Map<String, Object> json = {
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = {
       _type: type.key,
       type.key: {
         _annotations: annotaions,

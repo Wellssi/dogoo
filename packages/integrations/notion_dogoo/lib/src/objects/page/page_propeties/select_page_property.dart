@@ -14,15 +14,14 @@ class SelectPageProperty extends PageProperty {
   factory SelectPageProperty.fromJson(Map<String, dynamic> json) {
     return SelectPageProperty(
       id: json[_id],
-      select: json[_select] != null 
-          ? SelectOption.fromJson(json[_select]) 
-          : null,
+      select:
+          json[_select] != null ? SelectOption.fromJson(json[_select]) : null,
     );
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     if (select != null) {
       json.addAll({
         _select: select!.toJson(),
@@ -51,7 +50,7 @@ class SelectOption {
     );
   }
 
-  Map<String, Object> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       _id: id,
       _name: name,

@@ -61,7 +61,7 @@ class Page {
     );
   }
 
-  Map<String, Object> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       _object: object,
       _id: id,

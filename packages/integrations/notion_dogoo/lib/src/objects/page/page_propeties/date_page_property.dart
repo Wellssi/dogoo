@@ -22,8 +22,8 @@ class DatePageProperty extends PageProperty {
   }
 
   @override
-  Map<String, Object> toJson() {
-    Map<String, Object> json = super.toJson();
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = super.toJson();
     json.addAll({
       _start: start.toIso8601String(),
     });

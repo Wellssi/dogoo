@@ -36,9 +36,9 @@ part 'toggle_block.dart';
 part 'video_block.dart';
 
 /// REF: https://developers.notion.com/reference/block
-class Block {
+class Block extends NotionObject {
   const Block({
-    required this.id,
+    required super.id,
     required this.parent,
     required this.type,
     required this.createdTime,
@@ -48,8 +48,8 @@ class Block {
     required this.hasChildren,
     required this.archived,
     required this.inTrash,
-  });
-  final String id;
+  }) : super(object: 'block');
+
   final Parent parent;
   final BlockType type;
   final DateTime createdTime;
@@ -59,8 +59,6 @@ class Block {
   final bool archived;
   final bool inTrash;
   final bool hasChildren;
-
-  String get object => 'block';
 
   // TODO(Just-gomin): Return proper Block type objects.
   factory Block.fromJson(Map<String, dynamic> json) {
@@ -78,10 +76,10 @@ class Block {
     );
   }
 
-  Map<String, Object> toJson() {
-    return {
-      _object: object,
-      _id: id,
+  @override
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> json = super.toJson();
+    json.addAll({
       _parent: parent.toJson(),
       _type: type.key,
       _createdTime: createdTime.toIso8601String(),
@@ -91,6 +89,7 @@ class Block {
       _hasChildren: hasChildren,
       _archived: archived,
       _inTrash: inTrash,
-    };
+    });
+    return json;
   }
 }

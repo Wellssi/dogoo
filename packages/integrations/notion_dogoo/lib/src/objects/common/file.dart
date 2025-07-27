@@ -5,6 +5,35 @@ const _url = 'url';
 const _expiryTime = 'expiry_time';
 
 /// REF: https://developers.notion.com/reference/file-object
+///
+/// // Notion-hosted file (uploaded via UI)</br>
+/// ```json
+/// {
+///   "type": "file",
+///   "file": {
+///     "url": "<https://s3.us-west-2.amazonaws.com/...">,
+///     "expiry_time": "2025-04-24T22:49:22.765Z"
+///   }
+/// }
+/// ```
+/// // File uploaded via the Notion API</br>
+/// ```json
+/// {
+///   "type": "file_upload",
+///   "file_upload": {
+///     "id": "43833259-72ae-404e-8441-b6577f3159b4"
+///   }
+/// }
+/// ```
+/// // External file</br>
+/// ```json
+/// {
+///   "type": "external",
+///   "external": {
+///     "url": "<https://example.com/image.png">
+///   }
+/// }
+/// ```
 class File {
   const File({
     required this.type,
@@ -32,8 +61,8 @@ class File {
     );
   }
 
-  Map<String, Object> toJson() {
-    Map<String, Object> json = {
+  Map<String, dynamic> toJson() {
+    Map<String, dynamic> json = {
       _type: type.key,
       type.key: {
         _url: url,
