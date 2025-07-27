@@ -1,3 +1,29 @@
+/// PageProperties
+/// - [x] checkbox
+/// - [x] created_by
+/// - [x] created_time
+/// - [x] date
+/// - [x] email
+/// - [x] files
+/// - [x] formula
+/// - [x] icon
+/// - [x] last_edited_by
+/// - [x] last_edited_time
+/// - [ ] multi_select
+/// - [ ] number
+/// - [ ] people
+/// - [ ] phone_number
+/// - [ ] relation
+/// - [ ] rollup
+/// - [ ] rich_text
+/// - [ ] select
+/// - [ ] status
+/// - [ ] title
+/// - [ ] url
+/// - [ ] unique_id
+/// - [ ] verification
+library;
+
 import 'package:notion_dogoo/src/constants/constants.dart';
 import 'package:notion_dogoo/src/objects/objects.dart';
 
@@ -11,6 +37,7 @@ part 'formula_page_property.dart';
 part 'icon_page_property.dart';
 part 'last_edited_by_page_property.dart';
 part 'last_edited_time_page_property.dart';
+part 'multi_select_page_property.dart';
 part 'page_property_key.dart';
 part 'page_property.dart';
 

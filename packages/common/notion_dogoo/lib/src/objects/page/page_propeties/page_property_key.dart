@@ -19,3 +19,6 @@ const String _emoji = 'emoji';
 const String _file = 'file';
 const String _lastEditedBy = 'last_edited_by';
 const String _lastEditedTime = 'last_edited_time';
+const String _color = 'color';
+const String _multiSelect = 'multi_select';
+const String _name = 'name';
