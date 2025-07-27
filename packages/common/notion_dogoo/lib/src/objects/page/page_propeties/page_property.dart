@@ -34,11 +34,32 @@ class PageProperty {
         return LastEditedByPageProperty.fromJson(json);
       case PagePropertyType.lastEditedTime:
         return LastEditedTimePageProperty.fromJson(json);
-      default:
-        return PageProperty(
-          id: json[_id],
-          type: type,
-        );
+      case PagePropertyType.multiSelect:
+        return MultiSelectPageProperty.fromJson(json);
+      case PagePropertyType.number:
+        return NumberPageProperty.fromJson(json);
+      case PagePropertyType.people:
+        return PeoplePageProperty.fromJson(json);
+      case PagePropertyType.phoneNumber:
+        return PhoneNumberPageProperty.fromJson(json);
+      case PagePropertyType.relation:
+        return RelationPageProperty.fromJson(json);
+      case PagePropertyType.richText:
+        return RichTextPageProperty.fromJson(json);
+      case PagePropertyType.rollup:
+        return RollupPageProperty.fromJson(json);
+      case PagePropertyType.select:
+        return SelectPageProperty.fromJson(json);
+      case PagePropertyType.status:
+        return StatusPageProperty.fromJson(json);
+      case PagePropertyType.title:
+        return TitlePageProperty.fromJson(json);
+      case PagePropertyType.uniqueId:
+        return UniqueIdPageProperty.fromJson(json);
+      case PagePropertyType.url:
+        return UrlPageProperty.fromJson(json);
+      case PagePropertyType.verification:
+        return VerificationPageProperty.fromJson(json);
     }
   }
 
