@@ -43,7 +43,7 @@ class Block extends NotionObject {
     required this.type,
     required this.createdTime,
     required this.lastEditedTime,
-    required this.creattedBy,
+    required this.createdBy,
     required this.lastEditedBy,
     required this.hasChildren,
     required this.archived,
@@ -54,7 +54,7 @@ class Block extends NotionObject {
   final BlockType type;
   final DateTime createdTime;
   final DateTime lastEditedTime;
-  final User creattedBy;
+  final User createdBy;
   final User lastEditedBy;
   final bool archived;
   final bool inTrash;
@@ -68,7 +68,7 @@ class Block extends NotionObject {
       type: BlockType.fromKey(json[_type]),
       createdTime: DateTime.parse(json[_createdTime]),
       lastEditedTime: DateTime.parse(json[_lastEditedTime]),
-      creattedBy: User.fromJson(json[_createdBy]),
+      createdBy: User.fromJson(json[_createdBy]),
       lastEditedBy: User.fromJson(json[_lastEditedBy]),
       hasChildren: json[_hasChildren],
       archived: json[_archived],
@@ -84,7 +84,7 @@ class Block extends NotionObject {
       _type: type.key,
       _createdTime: createdTime.toIso8601String(),
       _lastEditedTime: lastEditedTime.toIso8601String(),
-      _createdBy: creattedBy.toJson(),
+      _createdBy: createdBy.toJson(),
       _lastEditedBy: lastEditedBy.toJson(),
       _hasChildren: hasChildren,
       _archived: archived,
