@@ -19,7 +19,7 @@ enum MentionDateType {
       case _now:
         return MentionDateType.now;
       default:
-        throw ArgumentError('Unkown key: $key');
+        throw ArgumentError('Unknown key: $key');
     }
   }
 }

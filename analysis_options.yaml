@@ -25,7 +25,7 @@ linter:
     cascade_invocations: false
     comment_references: false
     library_private_types_in_public_api: false
-    omit_obvious_property_types: false # make cleary declare the type
+    omit_obvious_property_types: false # make clearly declare the type
     one_member_abstracts: false
     prefer_double_quotes: false
     prefer_expression_function_bodies: false
